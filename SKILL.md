@@ -12,7 +12,7 @@ Do not invent a second style. Do not skip the thesis. Do not generate until the 
 Companion files in this repo (read them when needed):
 
 - `style.md` — ink, paper, type, print language
-- `layouts.md` — five plate layouts
+- `layouts.md` — plate layouts, including portrait/group automata
 - `machines.md` — how to turn a topic into real machinery
 - `examples.md` — worked briefs
 - `prompt.md` — final prompt template
@@ -21,9 +21,9 @@ If this skill is running as a single file with no companions, the same rules bel
 
 ## When to use / when not
 
-Use for: posters, editorial covers, event flyers, mechanical plates, cutaways, foundry/railway/bicycle/organ/boiler images in this system.
+Use for: posters, editorial covers, event flyers, mechanical plates, cutaways; also photos of cities, vehicles, landscapes, selfies, and group shots transcribed into this system.
 
-Do not use for: cute character art, fashion looks, cyberpunk, photoreal product shots, logos, UI mockups, or anything that only needs "steampunk goggles" as dressing.
+Do not use for: cute character art, fashion looks, cyberpunk, photoreal product shots, logos, UI mockups, or anything that only needs "steampunk goggles" as dressing. A portrait must become an automaton plate, not a person in costume.
 
 ## 1. Intake
 
@@ -45,11 +45,17 @@ Write a 4-line brief to yourself before prompting:
 ```
 Subject: ...
 Thesis: {one real mechanism} because {why it belongs to this topic}
-Layout: {hero-assembly | cutaway | exploded | gauge-board | dual-ink}
+Layout: {hero-assembly | cutaway | exploded | gauge-board | dual-ink | portrait-automaton | group-automaton}
 Text: title="..." / date="..." / place="..." / labels=part numbers
 ```
 
 If the brief is an event poster, title + date + place must appear on the plate (title stamped, date/place in the legend box).
+
+If the user attached a photo, classify it before generating:
+- engineering drawing → **style** reference
+- city / landscape / vehicle → **subject** reference (silhouette only)
+- selfie or group → **portrait** reference; pick `portrait-automaton` or `group-automaton`
+Neon night skylines may be subject shape only, never style.
 
 ## 2. Mechanical thesis (mandatory)
 
@@ -83,6 +89,8 @@ Pick one. Do not mix two full layouts in one plate.
 | `exploded` | parts, kits, product-as-machine |
 | `gauge-board` | events with lots of data (date, program, rules) |
 | `dual-ink` | two themes (e.g. city + night ride); one restrained overprint only |
+| `portrait-automaton` | a selfie or single portrait, rebuilt as one brass automaton |
+| `group-automaton` | a group photo, 2–6 labeled automata on one plate |
 
 All layouts share: generous parchment margin, dimension lines, numbered callouts, a small legend box, 3:4 portrait.
 
@@ -94,7 +102,7 @@ Image models garble long or mixed-script type. Keep lettering sparse and hierarc
 
 1. **Title** — 2–5 words, engraved Victorian serif, stamped / foil-pressed. Prefer English for the stamped title even if the chat is Chinese, unless the user insisted on a Chinese title.
 2. **Legend box** — date, place, one-line subtitle. Condensed industrial sans or stencil. Chinese is OK here if the user asked; keep it short (title / 日期 / 地点).
-3. **Callouts** — part numbers (`Fig. 12`, `A`, `B`) plus 1–3 word English labels (`CHAIN RING`, `STEAM DME`).
+3. **Callouts** — part numbers (`Fig. 12`, `A`, `B`) plus 1–3 word English labels (`CHAIN RING`, `STEAM DOME`).
 4. **No paragraphs** on the plate. No slogan stacking. No QR codes unless asked.
 
 If Chinese title is required, still generate, but expect distortion; offer a second pass with English stamped title + Chinese in the legend.
@@ -150,6 +158,7 @@ Reject and regenerate **once** (same thesis, tighter prompt) if any of these fai
 - Glossy CGI or game screenshot
 - Title missing when the brief was an event poster
 - Machine is a small ornament instead of the hero
+- Portrait run still shows photoreal skin, a selfie filter, or goggles-as-costume
 
 If the second image still fails the same check, show it anyway, name the miss, and ask whether to change thesis or layout.
 
