@@ -1,32 +1,39 @@
 # Steampunk Poster Skill
 
-An agent skill that designs **Victorian industrial engineering-plate posters**, not generic "steampunk vibes".
+Victorian industrial engineering-plate posters. Not generic steampunk vibes.
 
-Every run locks four decisions before it generates:
+Install with the open [skills CLI](https://github.com/vercel-labs/skills) — this is the npm-style install for agent skills. GitHub is the registry; you do not `npm install` this repo.
 
-1. **Subject** — what the plate is about
+```bash
+npx skills add tutao0123/steampunk-image-skill
+```
+
+Cursor only:
+
+```bash
+npx skills add tutao0123/steampunk-image-skill --agent cursor
+```
+
+All agents on this machine:
+
+```bash
+npx skills add tutao0123/steampunk-image-skill --all -g
+```
+
+Then ask the agent for a steampunk poster, or drop a city / bus / selfie / group photo.
+
+## What it does
+
+Every run locks four decisions before generating:
+
+1. **Subject**
 2. **Mechanical thesis** — one real mechanism (gears, piston, boiler, pipes, gauges, chain)
 3. **Layout** — hero, cutaway, exploded, gauge-board, dual-ink, portrait-automaton, group-automaton
-4. **On-image text** — stamped title, legend, callouts
+4. **On-image text**
 
-Then it builds one English prompt from a locked ink / paper / type / print system and renders **3:4**.
+Photos are transcribed, not filtered: vehicles become brass machines, people become automata.
 
-## Files
-
-| File | What it is |
-| --- | --- |
-| [SKILL.md](./SKILL.md) | Runbook the agent follows |
-| [style.md](./style.md) | Ink, paper, type, print language |
-| [layouts.md](./layouts.md) | Plate layouts, including portrait/group automata |
-| [machines.md](./machines.md) | Topic → machine mapping |
-| [prompt.md](./prompt.md) | Final prompt template |
-| [examples.md](./examples.md) | Worked briefs |
-
-## Use
-
-Put `SKILL.md` (and the companion files) in an agent skills folder, or tell the agent to follow this repo.
-
-Give it a subject. For an event, also give title / date / place. You can also drop a photo: a city, a bus, a landscape, a selfie, or a group shot. Photos are transcribed into the plate (vehicles become brass machines; people become automata), they are not filters.
+Example brief:
 
 ```
 一张关于城市骑行的活动海报。
@@ -35,9 +42,24 @@ Date: 12 Sept 2026
 Place: Riverside Foundry
 ```
 
-## Visual lock (short)
+## Visual lock
 
 - Inks: antique brass, oxidized copper, iron rust red, warm parchment beige, deep walnut brown
-- Paper: aged vellum / letterpress, fiber, foxing, faint grid
+- Paper: aged vellum / letterpress
 - Type: engraved Victorian serif title; condensed stencil labels
-- Forbidden: neon, cyan, magenta, cute cartoon steampunk, goggles-as-subject, unstructured flying clockwork, cyberpunk, photoreal game screenshots
+- Forbidden: neon, cyan, magenta, cute cartoon steampunk, goggles-as-subject, cyberpunk, photoreal game screenshots
+
+## Files
+
+| File | What it is |
+| --- | --- |
+| [SKILL.md](./SKILL.md) | Runbook (`npx skills add` finds this at repo root) |
+| [style.md](./style.md) | Ink, paper, type, print language |
+| [layouts.md](./layouts.md) | Plate layouts |
+| [machines.md](./machines.md) | Topic → machine mapping |
+| [prompt.md](./prompt.md) | Prompt template |
+| [examples.md](./examples.md) | Worked briefs |
+
+## License
+
+MIT. Companion public-domain / CC0 reference plates, if added later, keep their original licenses.
