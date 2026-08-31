@@ -1,6 +1,6 @@
 # Layouts
 
-All five are 3:4 portrait plates with parchment margins. Pick one.
+All layouts are 3:4 portrait plates with parchment margins. Pick one.
 
 ## hero-assembly (default)
 
@@ -31,3 +31,17 @@ Use when the brief is heavy on information (festival schedule, race rules, exhib
 Same as hero-assembly, plus **one** rust-red overprint (a route line, a second title word, a stamp). Misregister that ink slightly. Do not add a third color pass.
 
 Use when two ideas must coexist (city + night ride, tea + music).
+
+## portrait-automaton
+
+A single person (selfie, headshot, or standing portrait) rebuilt as one brass automaton on the plate. Bust or three-quarter figure. The photo supplies pose, hair silhouette, and clothing volumes only.
+
+Must show one readable mechanism in the body: neck gear train, jaw hinge, ocular turret, or a small boiler in the chest with pipes to the limbs. Skin is etched metal, not flesh. Eyes are lenses or gauges, not cartoon pupils.
+
+Use when the user drops a selfie or says "turn this person into a steampunk machine".
+
+## group-automaton
+
+Two to six people from a group photo. Each becomes a labeled automaton (Fig. A, B, C) on one plate, same height line, same ink, still an engineering drawing. Do not stage a party. Keep one shared thesis (e.g. all driven from a central boiler, or each has a neck gear).
+
+If there are more than six faces, pick the six most readable and note the rest in the legend ("etc.").

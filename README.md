@@ -6,7 +6,7 @@ Every run locks four decisions before it generates:
 
 1. **Subject** — what the plate is about
 2. **Mechanical thesis** — one real mechanism (gears, piston, boiler, pipes, gauges, chain)
-3. **Layout** — hero assembly, cutaway, exploded, gauge-board, or dual-ink
+3. **Layout** — hero, cutaway, exploded, gauge-board, dual-ink, portrait-automaton, group-automaton
 4. **On-image text** — stamped title, legend, callouts
 
 Then it builds one English prompt from a locked ink / paper / type / print system and renders **3:4**.
@@ -17,7 +17,7 @@ Then it builds one English prompt from a locked ink / paper / type / print syste
 | --- | --- |
 | [SKILL.md](./SKILL.md) | Runbook the agent follows |
 | [style.md](./style.md) | Ink, paper, type, print language |
-| [layouts.md](./layouts.md) | Five plate layouts |
+| [layouts.md](./layouts.md) | Plate layouts, including portrait/group automata |
 | [machines.md](./machines.md) | Topic → machine mapping |
 | [prompt.md](./prompt.md) | Final prompt template |
 | [examples.md](./examples.md) | Worked briefs |
@@ -26,7 +26,7 @@ Then it builds one English prompt from a locked ink / paper / type / print syste
 
 Put `SKILL.md` (and the companion files) in an agent skills folder, or tell the agent to follow this repo.
 
-Give it a subject. For an event, also give title / date / place.
+Give it a subject. For an event, also give title / date / place. You can also drop a photo: a city, a bus, a landscape, a selfie, or a group shot. Photos are transcribed into the plate (vehicles become brass machines; people become automata), they are not filters.
 
 ```
 一张关于城市骑行的活动海报。

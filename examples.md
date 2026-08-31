@@ -32,3 +32,25 @@ Text: title="MASKED MILL" / legend="nanoDiffusionLab" / labels=INPUT DRUM, MASK 
 ```
 
 Do not draw a neural-net diagram. Do not draw a robot.
+
+## 4. Selfie to automaton
+
+```
+Subject: user selfie → mechanical portrait
+Thesis: neck gear train + ocular turret because a head must turn and look
+Layout: portrait-automaton
+Text: title="AUTOMATON No. 1" / labels=NECK PINION, OCULAR, JAW HINGE
+```
+
+Photo = pose only. Brass skull plate, lens eyes, no flesh, no goggles-as-costume.
+
+## 5. Group photo
+
+```
+Subject: three friends in one frame
+Thesis: three automata fed by one central boiler
+Layout: group-automaton
+Text: title="TRIPLE STEAM SET" / labels=FIG. A, FIG. B, FIG. C, STEAM MAIN
+```
+
+Same ink, same height line, three labeled figures, one plate.
