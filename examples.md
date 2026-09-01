@@ -73,3 +73,12 @@ Text: title="MASKED MILL" / legend="nanoDiffusionLab" / labels=INPUT DRUM, MASK 
 ```
 
 No neural-net diagram, no robot.
+
+## Real runs (in this repo)
+
+Four CC0/public-domain inputs restyled end-to-end with `scripts/restyle.py` — input, exact prompt, and output in [`examples/`](./examples/README.md):
+
+- Pet photo → clockwork automaton cat (`examples/cat/`)
+- 1783 Ducreux portrait → spring-powered automaton (`examples/portrait/`)
+- Street musician → steam calliope-guitar (`examples/street/`)
+- Latte pour → vertical-boiler cup (`examples/coffee/`)

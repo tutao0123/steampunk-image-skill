@@ -1,0 +1,14 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one side-view automobile in the center, wheels at the same positions, ground line and sun in the top right). Aspect ratio 1:1 square.
+
+Transformed (re-materialize everything visible):
+- Materials: car body and cabin -> riveted brass panels with walnut trim; wheels -> iron-shod wooden spoked wheels with brass hubs; ground -> worn workshop floor.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- One mechanism, built into the subject and mechanically readable: the car's engine becomes a small vertical boiler with copper pipes routing to the front axle and a pressure gauge beside the driver seat; a piston rod drives the rear wheel.
+- Surface: rivets, patina, etched metal, soot in recesses, gentle steam haze rising from the boiler, warm workshop light.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the composition, adding or removing subjects, replacing the main subject, neon or cyan accents, chrome 3D render look, cute cartoon goggles as the only change, text.
+
+On-image text: none.

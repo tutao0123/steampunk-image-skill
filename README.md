@@ -2,6 +2,15 @@
 
 Turn images into steampunk — the same picture rebuilt in brass — or design Victorian engineering-plate posters from a text brief. Not generic steampunk vibes, not a goggle sticker.
 
+## What it looks like
+
+| Before | After |
+| --- | --- |
+| ![cat before](examples/cat/input.jpg) | ![cat after](examples/cat/output.jpg) |
+| ![portrait before](examples/portrait/input.jpg) | ![portrait after](examples/portrait/output.jpg) |
+
+Same cat, same yawn — re-built in brass, one real mechanism visible. Five worked runs (input + prompt + output each) live in [examples/](./examples/README.md); every input photo there is CC0 / public domain, so you can reuse them in your own posts.
+
 ## Two modes
 
 | You give | You get |
@@ -61,8 +70,9 @@ Then drop a photo ("把这张图改成蒸汽朋克风格") or give a brief ("给
 | [machines.md](./machines.md) | Subject → real mechanism mapping; photo reference rules |
 | [layouts.md](./layouts.md) | Poster plate layouts |
 | [examples.md](./examples.md) | Worked examples, mode-tagged |
+| [examples/](./examples/README.md) | Real runs: input + prompt + output for cat / portrait / street / coffee / car |
 | [scripts/restyle.py](./scripts/restyle.py) | OpenRouter img2img / text-to-image caller (Codex 等无图像工具的 agent 用) |
 
 ## License
 
-MIT. Companion public-domain / CC0 reference plates, if added later, keep their original licenses.
+MIT. The example input photos in `examples/` are CC0 or public domain (credits in [examples/README.md](./examples/README.md)); example outputs are generated images shown for demonstration.

@@ -1,0 +1,16 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one large cup held by a hand entering from the lower right, a metal pitcher pouring a thin stream of milk from the upper left, the stream still falling, tulip-shaped latte pattern on the coffee surface in the same shape and position), dark blurred cafe background. Aspect ratio 1:1 square, cup centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The cup becomes a riveted brass mug with a copper handle; the tulip latte-art pattern becomes an etched brass-and-copper inlay on the coffee surface, keeping the exact same tulip shape and position; the falling milk stream becomes a thin bright steam line pouring from a small copper kettle-pitcher with a lever valve.
+- The hand becomes an articulated brass clockwork hand with pinned finger joints, same grip and position.
+- One mechanism, built into the subject and mechanically readable: the cup's double wall is a small vertical boiler — a round pressure gauge is clipped to the rim and a tiny safety valve puffs one gentle wisp of steam.
+- Background: dark cafe blur becomes deep walnut brown with out-of-focus brass machine silhouettes and warm lamp bokeh rendered in palette colors only.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, etched metal, soot in recesses, warm workshop light.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the pour, the cup position or the latte pattern shape, adding a saucer, spoon or any new object, neon or cyan accents, chrome 3D render look, text.
+
+On-image text: none.

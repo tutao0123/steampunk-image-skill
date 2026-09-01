@@ -1,0 +1,17 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one seated street musician in the center-right playing an acoustic guitar, one leg crossed with the foot resting on an open instrument case in front of her, hair falling over the face), the crowd of bystanders on the left, the historic buildings, the column with statue, the domed church on the left, the market stalls with umbrellas on the right — every person and object stays in its exact position, none added or removed. Aspect ratio 1:1 square, main subject centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The acoustic guitar becomes a compact steam calliope-guitar: the body becomes a riveted brass resonator, a short row of small organ pipes runs along the neck, and small valves and a hand crank sit under the player's fingers.
+- The open instrument case becomes a small riveted copper boiler with a pressure gauge and one thin chimney wisp of steam; a copper steam line runs from the boiler to the guitar.
+- The musician becomes a clockwork automaton in the same seated pose: skin as matte brass plates, joints pinned at elbows and knees, waxed leather coat and parchment-beige shirt in the same cut.
+- Background people become soft parchment-beige silhouette figures in the same positions, tinted into the palette.
+- Buildings become riveted brass and copper facades with etched window hatching; the cobblestone square becomes cast iron plates with rows of rivets; the umbrellas become plain parchment canvas on brass ribs; the column statue becomes a verdigris-green bronze automaton figure.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, gentle steam haze near the boiler case, warm late-afternoon workshop light as in the photo.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: adding or removing people or objects, changing anyone's position or pose, neon or cyan accents, chrome 3D render look.
+
+On-image text: none. Remove every letter, logo, brand mark, and sign from the image — the umbrellas, banners, and facades must all be blank canvas and blank etched panels, with no writing anywhere.

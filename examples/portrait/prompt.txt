@@ -1,0 +1,17 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, pose (a man yawning, right arm thrown straight up, left fist raised to shoulder height, torso leaning back), face structure and exaggerated yawning expression with open mouth, three-quarter head turn, white cap, plain dark background. Aspect ratio 1:1 square, subject filling the frame as in the painting.
+
+Transformed (re-materialize everything visible):
+- The man becomes a life-size brass automaton in the same pose: skin becomes polished and patinated brass plates with visible seams following the original face planes; the open jaw reveals a real brass hinge and small linkages inside; a machined gear ring where the neck meets the shoulders.
+- Red coat becomes riveted iron-rust-red leather with brass buttons, same folds and volume; waistcoat becomes quilted parchment-beige canvas with a small brass winding key pinned to it; the white cap becomes soft riveted copper with the same slouch.
+- Hands become articulated clockwork fingers with visible joint pins, same gestures.
+- One mechanism, built into the subject and mechanically readable: an open maintenance hatch in the chest shows a wound mainspring barrel and a spinning governor fan, with linkages running up through the neck to the jaw hinge — the yawn is literally spring-powered.
+- Background: dark grey becomes deep walnut brown with faint engineering-plate layout lines and a ghost compass circle behind the head.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, letterpress grain.
+- Print language: Victorian engineering-plate illustration, slight ink misregistration. Not glossy 3D CGI, not photoreal human skin, not cyberpunk, not a photo filter.
+
+Forbidden: changing the pose or expression, replacing the subject, goggles added as the only change, neon or cyan accents, chrome 3D render look, text.
+
+On-image text: none.

@@ -1,0 +1,15 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one grey tabby cat, head in the upper right, shoulder and body filling the lower left, looking straight into the camera, both ears upright, white whiskers fanning out as in the photo), grass background behind the cat. Aspect ratio 1:1 square, subject centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The cat becomes a clockwork automaton cat in the exact same pose: fur becomes layered etched brass and stitched leather plates following the original fur pattern; whiskers become fine brass wire; eyes become warm amber glass lamp lenses keeping the original gaze and eye shape; the small mark on the nose bridge becomes an etched repair seam with two tiny rivets.
+- One mechanism, built into the subject and mechanically readable: a round hinged brass panel on the cat's chest is open like a pocket-watch case, revealing a wound mainspring barrel and a small gear train; a winding key sits between the shoulder blades.
+- Background: grass becomes an oxidized copper lawn, individual blades as etched hatching in verdigris green, soft warm workshop light from the upper left.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, one faint wisp of steam rising from the chest panel seam.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the pose, head angle or gaze, adding or removing cats or any other subject, cute cartoon goggles as the only change, neon or cyan accents, chrome 3D render look, text.
+
+On-image text: none.
