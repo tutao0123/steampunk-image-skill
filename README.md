@@ -74,7 +74,25 @@ Then drop a photo ("把这张图改成蒸汽朋克风格") or give a brief ("给
 ## Where images come from
 
 - Agents with a built-in image tool: the skill attaches the original photo and prompt directly.
-- Coding agents without one (Codex 等): the skill calls `scripts/restyle.py` (stdlib-only Python). Default provider is [SiliconFlow](https://siliconflow.cn) — `Qwen/Qwen-Image-Edit-2509`, ≈¥0.30/image, direct access in China, key in `SILICONFLOW_API_KEY`. `--provider openrouter` switches to [nano banana](https://openrouter.ai/google/gemini-2.5-flash-image-preview) / [gpt-image-1](https://openrouter.ai/openai/gpt-image-1) (key in `OPENROUTER_API_KEY`; image models are region-locked by OpenRouter for some networks).
+- Coding agents without one (Codex 等): the skill calls `scripts/restyle.py` — a single-file, stdlib-only Python script. Pick your provider with `--provider`; every call is one command:
+
+| `--provider` | Service / model | Auth (env) | Notes |
+| --- | --- | --- | --- |
+| `siliconflow` *(default)* | Qwen-Image-Edit-2509 on [SiliconFlow](https://siliconflow.cn) | `SILICONFLOW_API_KEY` | ≈¥0.30/image, direct access in China |
+| `openrouter` | nano banana / gpt-image-1 via [OpenRouter](https://openrouter.ai) | `OPENROUTER_API_KEY` | one key, many models; image models are region-locked by OpenRouter on some networks |
+| `openai` | native [OpenAI Images API](https://platform.openai.com/docs/api-reference/images) — `gpt-image-1` | `OPENAI_API_KEY` | edits use `input_fidelity=high` (keeps faces); size auto-matched to the input's aspect |
+| `gemini` | [Google AI Studio](https://aistudio.google.com) — `gemini-2.5-flash-image` (nano banana) | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | direct from Google, generous free tier |
+| `vertex` | [Vertex AI](https://cloud.google.com/vertex-ai) — the same Gemini image models inside your GCP project | `VERTEX_PROJECT` + `GOOGLE_ACCESS_TOKEN`, or a logged-in `gcloud` CLI | `VERTEX_LOCATION` defaults to `global` |
+
+```bash
+python scripts/restyle.py --image photo.jpg --prompt-file restyle-prompt.txt --out steampunk.png   # default: SiliconFlow
+python scripts/restyle.py --provider openai     --image photo.jpg --prompt-file restyle-prompt.txt --out steampunk.png
+python scripts/restyle.py --provider gemini     --image photo.jpg --prompt-file restyle-prompt.txt --out steampunk.png
+python scripts/restyle.py --provider vertex     --image photo.jpg --prompt-file restyle-prompt.txt --out steampunk.png
+python scripts/restyle.py --provider openrouter --prompt-file poster.txt --out poster.png          # Poster mode works on every provider
+```
+
+All providers speak the same prompt contract (Locked / Transformed / one mechanism), so results are comparable — swap the flag, keep the prompt.
 
 ## Visual lock (both modes)
 
@@ -93,8 +111,8 @@ Then drop a photo ("把这张图改成蒸汽朋克风格") or give a brief ("给
 | [machines.md](./machines.md) | Subject → real mechanism mapping; photo reference rules |
 | [layouts.md](./layouts.md) | Poster plate layouts |
 | [examples.md](./examples.md) | Worked examples, mode-tagged |
-| [examples/](./examples/README.md) | Real runs: input + prompt + output for cat / portrait / street / coffee / car |
-| [scripts/restyle.py](./scripts/restyle.py) | OpenRouter img2img / text-to-image caller (Codex 等无图像工具的 agent 用) |
+| [examples/](./examples/README.md) | Real runs: input + prompt + output for 12 restyles + 9 avatars |
+| [scripts/restyle.py](./scripts/restyle.py) | Multi-provider image caller: SiliconFlow / OpenRouter / OpenAI / Gemini / Vertex (stdlib only) |
 
 ## License
 

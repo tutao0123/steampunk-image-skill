@@ -62,7 +62,7 @@ Pick **one** readable mechanism that belongs to the photo's main subject — `ma
   SILICONFLOW_API_KEY=... python scripts/restyle.py \
     --image input.jpg --prompt-file restyle-prompt.txt --out steampunk-{slug}.png
   ```
-  Default provider is SiliconFlow (`Qwen/Qwen-Image-Edit-2509`, ≈¥0.30/image, direct access in China). `--provider openrouter` switches to nano banana — note OpenRouter region-locks image models for some networks. Text-only tools without API access → say so, then approximate: describe the photo's composition in the prompt ("same composition as: …") and warn the result approximates the photo.
+  Default provider is SiliconFlow (`Qwen/Qwen-Image-Edit-2509`, ≈¥0.30/image, direct access in China). `--provider` switches route: `openrouter` (one key, nano banana / gpt-image-1; image models region-locked on some networks), `openai` (native gpt-image-1 edits, `OPENAI_API_KEY`, `input_fidelity=high` keeps faces), `gemini` (Google AI Studio nano banana, `GEMINI_API_KEY`, free tier), `vertex` (Gemini image models in your GCP project — `VERTEX_PROJECT` + `GOOGLE_ACCESS_TOKEN` or logged-in `gcloud`). All take the same prompt; pick whatever key the user already has. Text-only tools without API access → say so, then approximate: describe the photo's composition in the prompt ("same composition as: …") and warn the result approximates the photo.
 - Aspect: output follows the input. Only poster mode forces 3:4.
 
 ### 5. Generate
