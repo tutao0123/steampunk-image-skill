@@ -287,7 +287,8 @@ def vlm_judge(path, model="Qwen/Qwen3-VL-8B-Instruct"):
                     "boilers, gauges) while keeping the original composition; an engraved or rendered automaton look is fine.\n"
                     "pass=false when: it is mostly the original photo with only a sepia/warm color filter; or large parts "
                     "(fur, paint, fabric, sky) keep their original photographic material; or saturated blue/cyan/purple is "
-                    "prominent; or a real-world brand text or logo is clearly readable.\n"
+                    "prominent; or a real-world brand text or logo is clearly readable; or the edit added "
+                    "accessories the original clearly does not show (hat, goggles, armor pieces).\n"
                     'Reply with JSON only: {"pass": true/false, "reason": "one short sentence"}')},
                 {"type": "image_url", "image_url": {"url": data_url(path)}}]}]}
     req = urllib.request.Request("https://api.siliconflow.cn/v1/chat/completions",

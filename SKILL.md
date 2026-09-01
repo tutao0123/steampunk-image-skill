@@ -44,6 +44,7 @@ Write two short lists before prompting — they go verbatim into the prompt and 
 
 - **Locked** — composition, camera angle, framing, subject identity, head count, pose, which object is which. Aspect ratio = the input image's ratio.
 - **Transformed** — materials (skin/metal/plastic/concrete → brushed brass, oxidized copper, riveted iron, walnut, leather, etched steel), palette (everything → the five inks in `style.md`; kill neon/cyan/magenta at the source), surfaces (rivets, patina, soot in recesses), light (warm soot-and-steam haze, workshop glow).
+  - **Living subjects (people & animals)**: zero organic material may survive — fur/feather/scale patterns are re-interpreted as engraved metal grain flowing the same directions (models otherwise keep photographic fur heads; the cat took 3 attempts to learn this). Never add accessories the photo doesn't show — models love adding top hats and goggles.
 
 ### 2. One mechanism, built in
 

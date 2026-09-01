@@ -10,13 +10,13 @@ Restyle the attached image as a steampunk / Victorian industrial re-materializat
 Locked (preserve exactly): composition, camera angle, framing, subject identity, {head count / pose / which object is where}. Aspect ratio {input ratio}.
 
 Transformed (re-materialize everything visible):
-- Materials: {concrete: skin → etched brass; concrete → riveted iron; fabric → oiled leather; wood → walnut; ...}
+- Materials: {concrete: skin → etched brass; concrete → riveted iron; fabric → oiled leather; wood → walnut; ...}. Every surface is rebuilt in metal or leather — **no fur, feathers, skin or fabric remains anywhere**; fur/feather/scale patterns are re-interpreted as engraved metal grain flowing in the same directions (never a mask or costume over the living original).
 - Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
 - One mechanism, built into the subject and mechanically readable: {mechanism from machines.md, e.g. "the bicycle's chain becomes a real brass chain drive: chainring, chain, rear sprocket"}. Gears only where something rotates, pistons only where something reciprocates.
 - Surface: rivets, patina, etched metal, soot in recesses, gentle steam haze, warm workshop light.
 - Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
 
-Forbidden: changing the composition, adding or removing subjects, replacing the main subject, neon or cyan accents, chrome 3D render look, cute cartoon goggles as the only change, text (unless asked below).
+Forbidden: changing the composition, adding or removing subjects, replacing the main subject, adding accessories not present in the photo (hats, goggles, armor), neon or cyan accents, chrome 3D render look, cute cartoon goggles as the only change, text (unless asked below).
 
 On-image text: {usually none; if asked, 2–6 short labels in condensed stencil}
 ```
