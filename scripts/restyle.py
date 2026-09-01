@@ -21,6 +21,11 @@ Providers:
 Pass --image to restyle an existing picture (Restyle mode); omit it for
 text-to-image (Poster mode).
 
+Add --verify to QC the saved image against the five-ink palette (scripts/style_check.py,
+needs Pillow) and --judge to also ask a VLM (Qwen3-VL on SiliconFlow) whether the edit is a
+true re-materialization. On failure the image is regenerated once, stricter, and the cleaner
+result is kept.
+
 Examples:
   python restyle.py --provider siliconflow --image photo.jpg --prompt-file prompt.txt --out out.png
   python restyle.py --image photo.jpg --prompt "..." --out out.png
@@ -110,7 +115,7 @@ def openrouter_payload(model, image_paths, prompt):
     for p in image_paths:
         content.append({"type": "image_url", "image_url": {"url": data_url(p)}})
     messages = [{"role": "user", "content": content if len(content) > 1 else prompt}]
-    return {"model": model, "messages": messages}
+    return {"model": model, "messages": messages, "modalities": ["image", "text"]}
 
 
 def extract_openrouter_images(payload):
@@ -245,6 +250,81 @@ def vertex_request(model, image_paths, prompt):
         json.dumps(gemini_body(model, image_paths, prompt)).encode()
 
 
+QC_RULES = ("\n\nRe-render rules (quality gate failed): fully re-materialize every surface in "
+    "aged brass, copper, iron and leather with rivets, pipes and visible mechanisms - a sepia or "
+    "warm color filter over the original photo is a reject. The background scene is re-materialized "
+    "too, edge to edge, no frame, no borders, no text. Five-ink palette only: no blue, no cyan, "
+    "no teal, no purple, no magenta, and no hot photographic green.")
+
+
+def palette_score(path):
+    """Five-ink palette QC via scripts/style_check.py (needs Pillow). None = unavailable."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    try:
+        from style_check import analyze
+    except ImportError:
+        return None
+    return analyze(path)
+
+
+def vlm_judge(path, model="Qwen/Qwen3-VL-8B-Instruct"):
+    """Ask a VLM whether this is a true re-materialization. True/False, or None if unavailable."""
+    key = os.environ.get("SILICONFLOW_API_KEY")
+    if not key:
+        return None
+    body = {"model": model, "max_tokens": 300, "temperature": 0,
+            "messages": [{"role": "user", "content": [
+                {"type": "text", "text": (
+                    "Judge this AI-edited image against its intent: turn an ordinary photo into a steampunk "
+                    "'re-materialization' where the subject's SURFACE MATERIALS are rebuilt as aged brass, copper, "
+                    "iron and leather with rivets, pipes or visible mechanisms.\n"
+                    "pass=true when: the main subject clearly reads as metal/leather machinery (plates, rivets, gears, "
+                    "boilers, gauges) while keeping the original composition; an engraved or rendered automaton look is fine.\n"
+                    "pass=false when: it is mostly the original photo with only a sepia/warm color filter; or large parts "
+                    "(fur, paint, fabric, sky) keep their original photographic material; or saturated blue/cyan/purple is "
+                    "prominent; or a real-world brand text or logo is clearly readable.\n"
+                    'Reply with JSON only: {"pass": true/false, "reason": "one short sentence"}')},
+                {"type": "image_url", "image_url": {"url": data_url(path)}}]}]}
+    req = urllib.request.Request("https://api.siliconflow.cn/v1/chat/completions",
+                                 data=json.dumps(body).encode(),
+                                 headers={"Authorization": f"Bearer {key}",
+                                          "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            txt = json.load(r)["choices"][0]["message"]["content"]
+    except Exception:
+        return None
+    i, j = txt.find("{"), txt.rfind("}")
+    try:
+        return json.loads(txt[i:j + 1]).get("pass")
+    except Exception:
+        return None
+
+
+def qc_pass(path, use_judge):
+    """Return (ok, palette_result_or_None, judge_result_or_None)."""
+    pal = palette_score(path)
+    jd = vlm_judge(path) if use_judge else None
+    ok = (pal is None or pal["pass"]) and jd is not False
+    return ok, pal, jd
+
+
+def keep_better(a_path, b_path, use_judge):
+    """Pick the better of two images by QC scores; returns (path, (palette, judge))."""
+    a = palette_score(a_path)
+    b = palette_score(b_path)
+    ja = vlm_judge(a_path) if use_judge else None
+    jb = vlm_judge(b_path) if use_judge else None
+    # rank: VLM pass beats judge-fail; palette pass beats palette-fail; then lower pollution
+    def rank(pal, jd):
+        return (1 if jd is False else 0,
+                1 if (pal is not None and not pal["pass"]) else 0,
+                (pal or {}).get("bad", 0) + (pal or {}).get("green", 0))
+    a, ja = palette_score(a_path), (vlm_judge(a_path) if use_judge else None)
+    b, jb = palette_score(b_path), (vlm_judge(b_path) if use_judge else None)
+    return (b_path, (b, jb)) if rank(b, jb) < rank(a, ja) else (a_path, (a, ja))
+
+
 def save_image_url(url, out_path):
     if url.startswith("data:"):
         _, _, b64 = url.partition(",")
@@ -272,6 +352,11 @@ def main():
     ap.add_argument("--model", help="default: provider-specific (%s)" % DEFAULT_MODELS)
     ap.add_argument("--size", help='output size, e.g. "1024x1024" (openai / siliconflow); '
                                    'default: auto from input aspect (openai) or 1024x1024')
+    ap.add_argument("--verify", action="store_true",
+                    help="QC the saved image against the five-ink palette; on failure regenerate once, stricter")
+    ap.add_argument("--judge", action="store_true",
+                    help="also ask a VLM (Qwen3-VL via SiliconFlow, uses SILICONFLOW_API_KEY) whether the edit "
+                         "is a true re-materialization; implies --verify")
     args = ap.parse_args()
 
     prompt = args.prompt or (
@@ -287,47 +372,66 @@ def main():
     elif args.provider != "gemini" and args.provider != "vertex" and missing:
         sys.exit(f"set the {missing[0]} environment variable first")
 
-    if args.provider == "siliconflow":
-        url = SILICONFLOW_URL
-        headers = {"Content-Type": "application/json",
-                   "Authorization": f"Bearer {os.environ[KEY_VARS['siliconflow'][0]]}"}
-        body = json.dumps(siliconflow_payload(model, args.image, prompt, args.size)).encode()
-        extract = siliconflow_extract
-    elif args.provider == "openrouter":
-        url = OPENROUTER_URL
-        headers = {"Content-Type": "application/json",
-                   "Authorization": f"Bearer {os.environ[KEY_VARS['openrouter'][0]]}"}
-        body = json.dumps(openrouter_payload(model, args.image, prompt)).encode()
-        extract = extract_openrouter_images
-    elif args.provider == "openai":
-        url, headers, body = openai_request(model, args.image, prompt, args.size)
-        extract = extract_openai_images
-    elif args.provider == "gemini":
-        url, headers, body = gemini_request(model, args.image, prompt)
-        extract = extract_gemini_images
-    else:
-        url, headers, body = vertex_request(model, args.image, prompt)
-        extract = extract_gemini_images
+    use_judge = args.judge
+    do_verify = args.verify or args.judge
 
-    req = urllib.request.Request(url, data=body, headers=headers, method="POST")
-    try:
-        with urllib.request.urlopen(req, timeout=300) as resp:
-            payload = json.load(resp)
-    except urllib.error.HTTPError as e:
-        sys.exit(f"API error {e.code}: {e.read().decode(errors='replace')[:500]}")
+    def run(ptext, out_path):
+        if args.provider == "siliconflow":
+            url = SILICONFLOW_URL
+            headers = {"Content-Type": "application/json",
+                       "Authorization": f"Bearer {os.environ[KEY_VARS['siliconflow'][0]]}"}
+            body = json.dumps(siliconflow_payload(model, args.image, ptext, args.size)).encode()
+            extract = siliconflow_extract
+        elif args.provider == "openrouter":
+            url = OPENROUTER_URL
+            headers = {"Content-Type": "application/json",
+                       "Authorization": f"Bearer {os.environ[KEY_VARS['openrouter'][0]]}"}
+            body = json.dumps(openrouter_payload(model, args.image, ptext)).encode()
+            extract = extract_openrouter_images
+        elif args.provider == "openai":
+            url, headers, body = openai_request(model, args.image, ptext, args.size)
+            extract = extract_openai_images
+        elif args.provider == "gemini":
+            url, headers, body = gemini_request(model, args.image, ptext)
+            extract = extract_gemini_images
+        else:
+            url, headers, body = vertex_request(model, args.image, ptext)
+            extract = extract_gemini_images
 
-    if args.provider == "siliconflow":
-        images = [i.get("url") for i in payload.get("images", []) if i.get("url")]
-        if not images and payload.get("data"):  # openai-style shape, just in case
-            images = [i.get("url") for i in payload["data"] if i.get("url")]
-    else:
-        images = extract(payload)
-    if not images:
-        detail = json.dumps(payload, ensure_ascii=False)[:400]
-        sys.exit(f"no image in response. payload: {detail}")
+        req = urllib.request.Request(url, data=body, headers=headers, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                payload = json.load(resp)
+        except urllib.error.HTTPError as e:
+            sys.exit(f"API error {e.code}: {e.read().decode(errors='replace')[:500]}")
 
-    save_image_url(images[0], args.out)
-    print(f"saved {args.out} via {args.provider}/{model} ({len(images)} image(s) returned)")
+        if args.provider == "siliconflow":
+            images = [i.get("url") for i in payload.get("images", []) if i.get("url")]
+            if not images and payload.get("data"):  # openai-style shape, just in case
+                images = [i.get("url") for i in payload["data"] if i.get("url")]
+        else:
+            images = extract(payload)
+        if not images:
+            detail = json.dumps(payload, ensure_ascii=False)[:400]
+            sys.exit(f"no image in response. payload: {detail}")
+        save_image_url(images[0], out_path)
+        return len(images)
+
+    n = run(prompt, args.out)
+
+    if do_verify:
+        ok, pal, jd = qc_pass(args.out, use_judge)
+        if not ok:
+            print(f"quality gate failed (palette={pal}, judge={jd}); retrying once, stricter")
+            retry = args.out + ".retry.png"
+            n = run(prompt + QC_RULES, retry)
+            best, (pal, jd) = keep_better(args.out, retry, use_judge)
+            if os.path.abspath(best) != os.path.abspath(args.out):
+                os.replace(best, args.out)
+            if os.path.exists(retry) and os.path.abspath(retry) != os.path.abspath(args.out):
+                os.remove(retry)
+            print(f"quality gate after retry: palette={pal}, judge={jd}")
+    print(f"saved {args.out} via {args.provider}/{model} ({n} image(s) returned)")
 
 
 def siliconflow_extract(payload):

@@ -106,6 +106,8 @@ Reject and regenerate **once** (same thesis/layout, tighter prompt) if any check
 - **Avatar**: face became a stranger · output not square · mechanism only readable outside a circle crop · busy background · cartoon/cute look · text or border present
 - **Poster**: no readable mechanism (gears don't mesh, pipes go nowhere) · palette broke · cute/anime/goggles-as-subject · glossy CGI look · event text missing · machine is an ornament, not the hero
 
+- Automated: `python scripts/restyle.py ... --verify --judge` runs a palette check (`scripts/style_check.py`) plus a VLM art-director pass (Qwen3-VL); a failed gate triggers one stricter regeneration and keeps the cleaner image.
+
 If the second attempt fails the same check, show it anyway, name the miss, and ask one question (change mechanism, layout, or reference handling — one only).
 
 ## Deliver

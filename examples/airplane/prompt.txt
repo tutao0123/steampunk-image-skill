@@ -14,3 +14,5 @@ Transformed (re-materialize everything visible):
 Forbidden: changing the biplane's silhouette, wing count or position, adding or removing aircraft, neon or cyan accents, chrome 3D render look.
 
 On-image text: none. No letters, banners, or museum labels anywhere.
+
+Subject-specific rules: the aircraft AND the entire hangar are fully re-materialized - fuselage and wings in riveted brass with fabric-and-brass surfaces, the engine as an exposed steam radial with cylinders and a small boiler; the tricolor wing and tail roundels become blank brass medallions with an engraved gear emblem (no red, white or blue rings); the hangar becomes a parchment-toned workshop structure with etched trusses. Nothing may remain as a color-filtered photograph.

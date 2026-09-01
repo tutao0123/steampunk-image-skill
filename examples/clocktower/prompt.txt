@@ -15,3 +15,9 @@ Forbidden: adding or removing people, stalls or buildings, changing anyone's pos
 On-image text: none. Remove every letter, sign, and banner — blank canvas and blank etched panels everywhere.
 
 Re-render rules: Fully render every part of the image in the five-ink palette — no blank white paper areas, no unfinished line art, no sketch-only regions. The output is a re-materialized photograph, not a poster: no borders, no title strips, no text anywhere.
+
+Subject-specific rules: every building is rebuilt in riveted brass and oxidized-copper masonry with etched window hatching; the tower carries a large exposed turret-clock gear train and escapement on its face; the market stalls become plain parchment canvas on brass ribs (blank canvas, no logos or shop names); the sky becomes parchment haze; the result must not read as a color-filtered photograph.
+
+Surroundings rule: the flanking buildings are also re-materialized as brass-and-copper facades with etched windows (no ordinary brick, no shop signage - all facades blank); the bare trees become fine etched verdigris branch work.
+
+Composition lock reminder: this is Restyle mode - the output must be the SAME market-square photograph with the same camera angle, the tower in the same position and height, the same stalls, trees, buildings and street lamps in their places. Do not create a collage, poster, manuscript page or floating-object design; no paper background, no plate framing - it stays a photographic scene, only re-built in metal.

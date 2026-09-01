@@ -14,3 +14,7 @@ Transformed (re-materialize everything visible):
 Forbidden: changing the motorcycle's pose or silhouette, adding a rider, neon or cyan accents, chrome 3D render look.
 
 On-image text: none. Remove every letter and logo — blank riveted panels and blank canvas everywhere.
+
+Subject-specific rules: the grass becomes an oxidized-copper lawn made of etched verdigris blades (absolutely no bright photographic green); the blue tarp behind becomes parchment canvas stretched on brass poles; background people become parchment silhouettes; there is no blue anywhere in the image.
+
+Ground rule: the entire ground becomes iron plating with rows of rivets - there is no grass anywhere in the scene.

@@ -96,6 +96,8 @@ python scripts/restyle.py --provider openrouter --prompt-file poster.txt --out p
 
 All providers speak the same prompt contract (Locked / Transformed / one mechanism), so results are comparable — swap the flag, keep the prompt.
 
+**Quality gate**: add `--verify` to check the saved image against the five-ink palette (`scripts/style_check.py` — saturated blue/cyan/purple and hot photo green are rejects), and `--judge` to also ask a VLM art director (Qwen3-VL via SiliconFlow) whether the edit is a true re-materialization rather than a color filter. A failed gate triggers one automatic, stricter regeneration and the cleaner result is kept.
+
 ## Visual lock (both modes)
 
 - Inks: antique brass, oxidized copper, iron rust red, warm parchment beige, deep walnut brown
