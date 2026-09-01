@@ -1,14 +1,18 @@
 Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
 
-Locked (preserve exactly): composition, camera angle, framing, subject identity (one side-view automobile in the center, wheels at the same positions, ground line and sun in the top right). Aspect ratio 1:1 square.
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one 1940s sedan in front three-quarter view from its left side, front wire-spoke wheel turned slightly outward, chrome grille and bumpers at the front, patina paint with rust patches, standing on asphalt before a plain dark wall), every rust patch and body line in its place. Aspect ratio 1:1 square, car centered as in the photo.
 
 Transformed (re-materialize everything visible):
-- Materials: car body and cabin -> riveted brass panels with walnut trim; wheels -> iron-shod wooden spoked wheels with brass hubs; ground -> worn workshop floor.
+- Body: the green paint and its rust patches become riveted brass panels with oxidized-copper patina in exactly the same pattern; roof and door lines keep their shapes with added seam strips and rivet rows.
+- Wheels: same positions and sizes — iron-shod wooden-spoked wheels with brass hubs; the wire spokes become brass wire spokes.
+- Grille and bumpers: the chrome grille becomes a brass radiator shell with a round pressure gauge set in it; bumpers become polished brass bars.
+- One mechanism, built into the subject and mechanically readable: the engine becomes a small vertical boiler behind the grille — copper pipes run from it along the frame to a piston drive on the rear wheel, and a thin wisp of steam rises from the filler cap on the hood.
+- Headlamps become brass-and-glass pressure lamps; the running board becomes a walnut-plated step.
+- Background: the wall becomes aged vellum-toned stone with faint engineering-plate hatching; the ground becomes worn iron plating.
 - Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
-- One mechanism, built into the subject and mechanically readable: the car's engine becomes a small vertical boiler with copper pipes routing to the front axle and a pressure gauge beside the driver seat; a piston rod drives the rear wheel.
-- Surface: rivets, patina, etched metal, soot in recesses, gentle steam haze rising from the boiler, warm workshop light.
+- Surface: rivets, patina, soot in recesses, gentle steam haze, warm workshop light.
 - Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
 
-Forbidden: changing the composition, adding or removing subjects, replacing the main subject, neon or cyan accents, chrome 3D render look, cute cartoon goggles as the only change, text.
+Forbidden: changing the car's silhouette, wheel count or position, adding or removing cars or people, neon or cyan accents, chrome 3D render look.
 
-On-image text: none.
+On-image text: none. No letters, badges or logos anywhere — blank riveted panels only.

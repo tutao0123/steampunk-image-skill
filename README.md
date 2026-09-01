@@ -6,7 +6,7 @@ Turn images into steampunk — the same picture rebuilt in brass — or design V
 
 | Before | After |
 | --- | --- |
-| ![cat before](examples/cat/input.jpg) | ![cat after](examples/cat/output.jpg) |
+| <img src="examples/cat/input.jpg" width="400"> | <img src="examples/cat/output.jpg" width="400"> |
 
 Same cat, same yawn — re-built in brass, one real mechanism visible. Twelve worked runs (input + prompt + output each) live in [examples/](./examples/README.md); every input photo there is CC0 / public domain, so you can reuse them in your own posts.
 
@@ -16,12 +16,12 @@ Vehicles, pets, food, streets, buildings, skies — every run keeps the original
 
 | Before | After | Before | After |
 | --- | --- | --- | --- |
-| **Car** ([↗](examples/car/)) ![car](examples/car/input.png) | ![car out](examples/car/output-qwen.jpg) | **Bicycle** ([↗](examples/bicycle/)) ![bike](examples/bicycle/input.jpg) | ![bike out](examples/bicycle/output.jpg) |
-| **Motorcycle** ([↗](examples/motorcycle/)) ![moto](examples/motorcycle/input.jpg) | ![moto out](examples/motorcycle/output.jpg) | **Biplane** ([↗](examples/airplane/)) ![plane](examples/airplane/input.jpg) | ![plane out](examples/airplane/output.jpg) |
-| **Airship** ([↗](examples/balloon/)) ![balloon](examples/balloon/input.jpg) | ![balloon out](examples/balloon/output.jpg) | **Cat** ([↗](examples/cat/)) ![cat2](examples/cat/input.jpg) | ![cat2 out](examples/cat/output.jpg) |
-| **Dog** ([↗](examples/dog/)) ![dog](examples/dog/input.jpg) | ![dog out](examples/dog/output.jpg) | **Latte** ([↗](examples/coffee/)) ![coffee](examples/coffee/input.jpg) | ![coffee out](examples/coffee/output.jpg) |
-| **Street busker** ([↗](examples/street/)) ![street](examples/street/input.jpg) | ![street out](examples/street/output.jpg) | **Clock tower** ([↗](examples/clocktower/)) ![tower](examples/clocktower/input.jpg) | ![tower out](examples/clocktower/output.jpg) |
-| **Dusk skyline** ([↗](examples/skyline/)) ![sky](examples/skyline/input.jpg) | ![sky out](examples/skyline/output.jpg) | **1783 portrait** ([↗](examples/portrait/)) ![port](examples/portrait/input.jpg) | ![port out](examples/portrait/output.jpg) |
+| **Car** ([↗](examples/car/)) <img src="examples/car/input.jpg" width="270" alt="car"> | <img src="examples/car/output.jpg" width="270" alt="car out"> | **Bicycle** ([↗](examples/bicycle/)) <img src="examples/bicycle/input.jpg" width="270" alt="bike"> | <img src="examples/bicycle/output.jpg" width="270" alt="bike out"> |
+| **Motorcycle** ([↗](examples/motorcycle/)) <img src="examples/motorcycle/input.jpg" width="270" alt="moto"> | <img src="examples/motorcycle/output.jpg" width="270" alt="moto out"> | **Biplane** ([↗](examples/airplane/)) <img src="examples/airplane/input.jpg" width="270" alt="plane"> | <img src="examples/airplane/output.jpg" width="270" alt="plane out"> |
+| **Airship** ([↗](examples/balloon/)) <img src="examples/balloon/input.jpg" width="270" alt="balloon"> | <img src="examples/balloon/output.jpg" width="270" alt="balloon out"> | **Cat** ([↗](examples/cat/)) <img src="examples/cat/input.jpg" width="270" alt="cat2"> | <img src="examples/cat/output.jpg" width="270" alt="cat2 out"> |
+| **Dog** ([↗](examples/dog/)) <img src="examples/dog/input.jpg" width="270" alt="dog"> | <img src="examples/dog/output.jpg" width="270" alt="dog out"> | **Latte** ([↗](examples/coffee/)) <img src="examples/coffee/input.jpg" width="270" alt="coffee"> | <img src="examples/coffee/output.jpg" width="270" alt="coffee out"> |
+| **Street busker** ([↗](examples/street/)) <img src="examples/street/input.jpg" width="270" alt="street"> | <img src="examples/street/output.jpg" width="270" alt="street out"> | **Clock tower** ([↗](examples/clocktower/)) <img src="examples/clocktower/input.jpg" width="270" alt="tower"> | <img src="examples/clocktower/output.jpg" width="270" alt="tower out"> |
+| **Dusk skyline** ([↗](examples/skyline/)) <img src="examples/skyline/input.jpg" width="270" alt="sky"> | <img src="examples/skyline/output.jpg" width="270" alt="sky out"> | **1783 portrait** ([↗](examples/portrait/)) <img src="examples/portrait/input.jpg" width="270" alt="port"> | <img src="examples/portrait/output.jpg" width="270" alt="port out"> |
 
 ## Avatars that survive the circle crop
 

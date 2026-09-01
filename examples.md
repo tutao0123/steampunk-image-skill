@@ -78,7 +78,7 @@ No neural-net diagram, no robot.
 
 Twelve CC0/public-domain inputs restyled end-to-end with `scripts/restyle.py` — input, exact prompt, and output in [`examples/`](./examples/README.md):
 
-- Car → brass boiler car (`examples/car/`, two providers)
+- Car → brass boiler car (`examples/car/`)
 - Pet photo → clockwork automaton cat (`examples/cat/`)
 - 1783 Ducreux portrait → spring-powered automaton (`examples/portrait/`)
 - Street musician → steam calliope-guitar (`examples/street/`)
