@@ -1,17 +1,16 @@
-Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture. The WHOLE animal is rebuilt as a machine — including the head.
+Restyle the attached close-up photo as a steampunk re-materialization. Same picture, same framing, rebuilt in brass.
 
-Locked (preserve exactly): composition, camera angle, framing, pose (crouching cat, head raised in the upper right, looking straight into the camera), head angle and position, ear positions, gaze direction, the layout of the grey tabby marking pattern across the body, grass background. Aspect ratio 1:1 square, subject centered as in the photo.
+Locked (preserve exactly): the extreme close-up framing - the cat's head fills the entire frame exactly as in the photo, head lowered and tilted toward the camera, both ears up, eyes looking into the lens, long white whiskers fanning wide, blurred grass behind the head. Do NOT zoom out. Do NOT show a full body. Only the head plus a sliver of neck/shoulder at the bottom edge is visible, exactly like the photo.
 
-Transformed (re-materialize everything visible — with no exceptions):
-- The entire cat without exception becomes a clockwork automaton: head, face, ears, chest, legs, paws and tail are all machine parts. No real fur remains anywhere.
-- The head is a brass automaton skull built from etched plates following the original marking pattern: same skull shape, same muzzle shape, same ear triangles (ears become riveted brass with copper inner panels), same eyes and gaze — but the eyes become warm amber glass lamp lenses, the nose becomes a small copper vent, the mouth seam becomes a hinged brass jaw.
-- Whiskers become fine brass wire in the same fan arrangement.
-- One mechanism, built into the subject and mechanically readable: a round hinged panel on the chest is open like a pocket-watch case, revealing a wound mainspring barrel and a small gear train; a winding key sits between the shoulder blades; a thin seam ring separates head from body like a machined collar.
-- Background: the grass is fully re-rendered as an oxidized copper lawn — every blade an etched verdigris-green metal blade in sharp focus, same layout as the photo; soft warm workshop light from the upper left.
-- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
-- Surface: rivets, patina, soot in recesses, one faint wisp of steam rising from the chest panel seam.
-- Print language: photorealistic re-materialized photograph in Victorian engineering-plate spirit — real materials, real light, fine engraved detail. Not cartoon, not anime, not cute, not an illustration with outlines, not glossy 3D CGI, not cyberpunk, not a photo filter.
+Transformed (re-materialize everything visible):
+- The head becomes a brass automaton skull in the exact same shape and angle: etched brass plates following the original grey-cream fur pattern, riveted seams along the original facial planes; the ears become riveted brass with copper inner panels, same triangles, same positions; the muzzle keeps its exact shape with a small copper vent as the nose; the mouth becomes a thin hinged brass seam.
+- The eyes become large warm amber glass lamp lenses keeping the exact downward gaze; the brow lines become fine engravings.
+- The whiskers become fine brass wire in the same fan arrangement.
+- One mechanism at the bottom edge, half-cropped by the frame exactly where the neck leaves the photo: a machined brass collar ring with a tiny pressure gauge on it.
+- Background: the blurred grass becomes soft oxidized-copper bokeh blades in desaturated verdigris green, same blur.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta.
+- Photorealistic re-materialized photograph, real metal materials and light, fine engraved detail. Not cartoon, not anime, not glossy 3D CGI, no borders, no text.
 
-Forbidden: any real fur or photographic cat head or tail (the head must be metal like the body), cartoon or anime style, thick outlines, picture frame or border of any kind (the scene runs edge-to-edge), changing the pose, head angle or gaze, adding or removing cats or any other subject, neon or cyan accents, chrome 3D render look, text.
+Forbidden: zooming out, showing a full body, adding a chest or body panel or legs, changing the head angle, ears or gaze, any real fur, cartoon style, borders, text.
 
 On-image text: none.
