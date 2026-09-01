@@ -11,6 +11,7 @@ Locked (preserve exactly): composition, camera angle, framing, subject identity,
 
 Transformed (re-materialize everything visible):
 - Materials: {concrete: skin → etched brass; concrete → riveted iron; fabric → oiled leather; wood → walnut; ...}. Every surface is rebuilt in metal or leather — **no fur, feathers, skin or fabric remains anywhere**; fur/feather/scale patterns are re-interpreted as engraved metal grain flowing in the same directions (never a mask or costume over the living original).
+- **Whole-image rule**: the style covers 100% of the frame — main subject, every secondary object, clothing, background and environment are ALL re-materialized in the same metal system. A photographic remnant anywhere (sky, walls, props, other subjects) is a reject; if the background cannot be truly rebuilt, re-render it as palette-colored haze instead of leaving it photographic.
 - Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
 - One mechanism, built into the subject and mechanically readable: {mechanism from machines.md, e.g. "the bicycle's chain becomes a real brass chain drive: chainring, chain, rear sprocket"}. Gears only where something rotates, pistons only where something reciprocates.
 - Surface: rivets, patina, etched metal, soot in recesses, gentle steam haze, warm workshop light.

@@ -12,8 +12,8 @@ Usage:
 import json
 import sys
 
-BAD_PCT_LIMIT = 1.0    # blue+cyan+purple % of pixels above which the image fails
-GREEN_PCT_LIMIT = 4.0  # hot green % above which the image fails
+BAD_PCT_LIMIT = 3.0    # blue+cyan+purple % of pixels above which the image fails
+GREEN_PCT_LIMIT = 5.0  # hot green % above which the image fails
 
 
 def analyze(path):

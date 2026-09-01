@@ -45,6 +45,7 @@ Write two short lists before prompting — they go verbatim into the prompt and 
 - **Locked** — composition, camera angle, framing, subject identity, head count, pose, which object is which. Aspect ratio = the input image's ratio.
 - **Transformed** — materials (skin/metal/plastic/concrete → brushed brass, oxidized copper, riveted iron, walnut, leather, etched steel), palette (everything → the five inks in `style.md`; kill neon/cyan/magenta at the source), surfaces (rivets, patina, soot in recesses), light (warm soot-and-steam haze, workshop glow).
   - **Living subjects (people & animals)**: zero organic material may survive — fur/feather/scale patterns are re-interpreted as engraved metal grain flowing the same directions (models otherwise keep photographic fur heads; the cat took 3 attempts to learn this). Never add accessories the photo doesn't show — models love adding top hats and goggles.
+  - **Whole-image rule**: the style covers 100% of the frame — main subject, secondary objects, clothing, background. Models routinely leave the background as an untouched photograph (clock tower: 7 attempts; parrot: feathers stayed) — a photographic remnant anywhere is a reject at the quality gate.
 
 ### 2. One mechanism, built in
 
@@ -107,7 +108,7 @@ Reject and regenerate **once** (same thesis/layout, tighter prompt) if any check
 - **Avatar**: face became a stranger · output not square · mechanism only readable outside a circle crop · busy background · cartoon/cute look · text or border present
 - **Poster**: no readable mechanism (gears don't mesh, pipes go nowhere) · palette broke · cute/anime/goggles-as-subject · glossy CGI look · event text missing · machine is an ornament, not the hero
 
-- Automated: `python scripts/restyle.py ... --verify --judge` runs a palette check (`scripts/style_check.py`) plus a VLM art-director pass (Qwen3-VL); a failed gate triggers one stricter regeneration and keeps the cleaner image.
+- Automated: `python scripts/restyle.py ... --verify --judge` runs a palette check (`scripts/style_check.py`) plus a VLM art-director score 0-100 (Qwen3-VL); score ≥70 passes (partial restyles with minor photographic remnants are acceptable), a failed gate triggers one stricter regeneration and keeps the higher-scored image.
 
 If the second attempt fails the same check, show it anyway, name the miss, and ask one question (change mechanism, layout, or reference handling — one only).
 

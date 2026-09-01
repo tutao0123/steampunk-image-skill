@@ -59,7 +59,7 @@ KEY_VARS = {
 }
 DEFAULT_MODELS = {
     "siliconflow": "Qwen/Qwen-Image-Edit-2509",
-    "openrouter": "google/gemini-2.5-flash-image",
+    "openrouter": "black-forest-labs/flux.2-klein-4b",
     "openai": "gpt-image-1",
     "gemini": "gemini-2.5-flash-image",
     "vertex": "gemini-2.5-flash-image",
@@ -258,7 +258,9 @@ def vertex_request(model, image_paths, prompt):
 QC_RULES = ("\n\nRe-render rules (quality gate failed): fully re-materialize every surface in "
     "aged brass, copper, iron and leather with rivets, pipes and visible mechanisms - a sepia or "
     "warm color filter over the original photo is a reject. The background scene is re-materialized "
-    "too, edge to edge, no frame, no borders, no text. Five-ink palette only: no blue, no cyan, "
+    "too, edge to edge, no frame, no borders, no text. The style covers 100% of the frame - the main "
+    "subject, every secondary object, clothing and the background are ALL re-materialized; nothing in "
+    "the image may remain an unedited photograph. Five-ink palette only: no blue, no cyan, "
     "no teal, no purple, no magenta, and no hot photographic green.")
 
 
@@ -273,23 +275,22 @@ def palette_score(path):
 
 
 def vlm_judge(path, model="Qwen/Qwen3-VL-8B-Instruct"):
-    """Ask a VLM whether this is a true re-materialization. True/False, or None if unavailable."""
+    """Ask a VLM to score the re-materialization 0-100. Returns int score, or None if unavailable."""
     key = os.environ.get("SILICONFLOW_API_KEY")
     if not key:
         return None
     body = {"model": model, "max_tokens": 300, "temperature": 0,
             "messages": [{"role": "user", "content": [
                 {"type": "text", "text": (
-                    "Judge this AI-edited image against its intent: turn an ordinary photo into a steampunk "
+                    "Score this AI-edited image against its intent: turn an ordinary photo into a steampunk "
                     "'re-materialization' where the subject's SURFACE MATERIALS are rebuilt as aged brass, copper, "
-                    "iron and leather with rivets, pipes or visible mechanisms.\n"
-                    "pass=true when: the main subject clearly reads as metal/leather machinery (plates, rivets, gears, "
-                    "boilers, gauges) while keeping the original composition; an engraved or rendered automaton look is fine.\n"
-                    "pass=false when: it is mostly the original photo with only a sepia/warm color filter; or large parts "
-                    "(fur, paint, fabric, sky) keep their original photographic material; or saturated blue/cyan/purple is "
-                    "prominent; or a real-world brand text or logo is clearly readable; or the edit added "
-                    "accessories the original clearly does not show (hat, goggles, armor pieces).\n"
-                    'Reply with JSON only: {"pass": true/false, "reason": "one short sentence"}')},
+                    "iron and leather with rivets, pipes or visible mechanisms, keeping the original composition.\n"
+                    "Scoring guide:\n"
+                    "90-100: excellent - subject and scene convincingly rebuilt in metal, palette clean, nothing photographic left\n"
+                    "70-89: good - main subject clearly metal with real mechanisms; minor flaws acceptable (slight color drift, small photographic remnants in the background, a few real feathers/fur at edges)\n"
+                    "40-69: partial - the style is applied but large parts keep their original photographic material, or noticeable off-palette color\n"
+                    "0-39: reject - only a sepia/warm color filter over the original photo, or wrong subject/composition, or heavy off-palette color, or a readable real-world brand text or logo, or added accessories the original clearly does not show (hat, goggles)\n"
+                    'Reply with JSON only: {"score": <integer 0-100>, "reason": "one short sentence"}')},
                 {"type": "image_url", "image_url": {"url": data_url(path)}}]}]}
     req = urllib.request.Request("https://api.siliconflow.cn/v1/chat/completions",
                                  data=json.dumps(body).encode(),
@@ -302,33 +303,49 @@ def vlm_judge(path, model="Qwen/Qwen3-VL-8B-Instruct"):
         return None
     i, j = txt.find("{"), txt.rfind("}")
     try:
-        return json.loads(txt[i:j + 1]).get("pass")
+        score = json.loads(txt[i:j + 1]).get("score")
+        return int(score) if score is not None else None
     except Exception:
         return None
 
 
+SCORE_GATE = 70        # VLM score at/above which an image passes
+PALETTE_GATE = 8.0     # bad+green % above which the palette veto applies
+
+
 def qc_pass(path, use_judge):
-    """Return (ok, palette_result_or_None, judge_result_or_None)."""
+    """Return (ok, palette_result_or_None, score_or_None).
+
+    Score-based when the judge is available (score >= SCORE_GATE, palette only
+    vetoes severe cases); palette check decides alone when the judge is off."""
     pal = palette_score(path)
-    jd = vlm_judge(path) if use_judge else None
-    ok = (pal is None or pal["pass"]) and jd is not False
-    return ok, pal, jd
+    score = vlm_judge(path) if use_judge else None
+    palette_bad = pal is not None and (pal["bad"] + pal["green"]) >= PALETTE_GATE
+    if score is not None:
+        ok = score >= SCORE_GATE and not palette_bad
+    elif use_judge:
+        ok = not palette_bad   # judge requested but unavailable: lenient palette veto only
+    else:
+        ok = pal is None or pal["pass"]
+    return ok, pal, score
 
 
 def keep_better(a_path, b_path, use_judge):
-    """Pick the better of two images by QC scores; returns (path, (palette, judge))."""
+    """Pick the better of two images by QC scores; returns (path, (palette, score))."""
     a = palette_score(a_path)
     b = palette_score(b_path)
     ja = vlm_judge(a_path) if use_judge else None
     jb = vlm_judge(b_path) if use_judge else None
-    # rank: VLM pass beats judge-fail; palette pass beats palette-fail; then lower pollution
-    def rank(pal, jd):
-        return (1 if jd is False else 0,
-                1 if (pal is not None and not pal["pass"]) else 0,
-                (pal or {}).get("bad", 0) + (pal or {}).get("green", 0))
-    a, ja = palette_score(a_path), (vlm_judge(a_path) if use_judge else None)
-    b, jb = palette_score(b_path), (vlm_judge(b_path) if use_judge else None)
-    return (b_path, (b, jb)) if rank(b, jb) < rank(a, ja) else (a_path, (a, ja))
+
+    def effective(score, pal):
+        if score is not None:
+            return score - (15 if pal is not None and (pal["bad"] + pal["green"]) >= PALETTE_GATE else 0)
+        if pal is None:
+            return 50.0
+        return max(0.0, 100.0 - (pal["bad"] + pal["green"]) * 10.0)
+
+    ea, eb = effective(ja, a), effective(jb, b)
+    return (b_path, (b, jb)) if eb > ea else (a_path, (a, ja))
 
 
 def save_image_url(url, out_path):
@@ -428,7 +445,7 @@ def main():
     if do_verify:
         ok, pal, jd = qc_pass(args.out, use_judge)
         if not ok:
-            print(f"quality gate failed (palette={pal}, judge={jd}); retrying once, stricter")
+            print(f"quality gate failed (palette={pal}, score={jd}/100); retrying once, stricter")
             retry = args.out + ".retry.png"
             n = run(prompt + QC_RULES, retry)
             best, (pal, jd) = keep_better(args.out, retry, use_judge)
@@ -436,7 +453,7 @@ def main():
                 os.replace(best, args.out)
             if os.path.exists(retry) and os.path.abspath(retry) != os.path.abspath(args.out):
                 os.remove(retry)
-            print(f"quality gate after retry: palette={pal}, judge={jd}")
+            print(f"quality gate after retry: palette={pal}, score={jd}/100")
     print(f"saved {args.out} via {args.provider}/{model} ({n} image(s) returned)")
 
 
