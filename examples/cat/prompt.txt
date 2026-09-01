@@ -1,16 +1,17 @@
-Restyle the attached close-up photo as a steampunk re-materialization. Same picture, same framing, rebuilt in brass.
+Restyle the attached close-up photo as a fully mechanical steampunk re-materialization. Same picture, same framing - but every part of the cat is machine: 100% metal, zero organic material.
 
-Locked (preserve exactly): the extreme close-up framing - the cat's head fills the entire frame exactly as in the photo, head lowered and tilted toward the camera, both ears up, eyes looking into the lens, long white whiskers fanning wide, blurred grass behind the head. Do NOT zoom out. Do NOT show a full body. Only the head plus a sliver of neck/shoulder at the bottom edge is visible, exactly like the photo.
+Locked (preserve exactly): the extreme close-up framing - the head fills the entire frame, lowered and tilted toward the camera, both ears up, eyes looking into the lens, whiskers fanning wide, blurred grass behind. Do NOT zoom out. Do NOT show a full body. Only the head plus a sliver of neck at the bottom edge.
 
-Transformed (re-materialize everything visible):
-- The head becomes a brass automaton skull in the exact same shape and angle: etched brass plates following the original grey-cream fur pattern, riveted seams along the original facial planes; the ears become riveted brass with copper inner panels, same triangles, same positions; the muzzle keeps its exact shape with a small copper vent as the nose; the mouth becomes a thin hinged brass seam.
-- The eyes become large warm amber glass lamp lenses keeping the exact downward gaze; the brow lines become fine engravings.
+Transformed (everything is metal, no exceptions):
+- The entire head is a brass automaton skull: brushed and etched brass plates covering every surface, the original grey-cream fur pattern re-interpreted as fine engraved metal grain flowing in the same directions - it reads as machined texture, not hair. No fur remains anywhere on the image.
+- Riveted seams run along the original facial planes; the ears are riveted brass shells with oxidized-copper inner panels; the muzzle keeps its exact shape with a small copper vent as the nose; the mouth becomes a thin hinged brass seam; the chin and cheeks are curved brass plates.
+- The eyes become large warm amber glass lamp lenses set in machined brass housings, keeping the exact downward gaze.
 - The whiskers become fine brass wire in the same fan arrangement.
-- One mechanism at the bottom edge, half-cropped by the frame exactly where the neck leaves the photo: a machined brass collar ring with a tiny pressure gauge on it.
-- Background: the blurred grass becomes soft oxidized-copper bokeh blades in desaturated verdigris green, same blur.
+- At the bottom edge, half-cropped by the frame: a machined brass collar ring with a tiny pressure gauge, and a hint of layered neck armor in leather and iron.
+- Background: the blurred grass becomes soft oxidized-copper bokeh blades in desaturated verdigris green.
 - Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta.
-- Photorealistic re-materialized photograph, real metal materials and light, fine engraved detail. Not cartoon, not anime, not glossy 3D CGI, no borders, no text.
+- Photorealistic metal render, real materials and light, fine engraved detail. Not cartoon, not anime, not a mask on a real animal - the whole head is the machine. No borders, no text.
 
-Forbidden: zooming out, showing a full body, adding a chest or body panel or legs, changing the head angle, ears or gaze, any real fur, cartoon style, borders, text.
+Forbidden: any fur, hair or organic material anywhere, a mask worn over a real cat, zooming out, full body, cartoon style, borders, text.
 
 On-image text: none.
