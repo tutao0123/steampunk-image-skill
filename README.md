@@ -81,7 +81,7 @@ Then drop a photo ("把这张图改成蒸汽朋克风格") or give a brief ("给
 | `--provider` | Service / model | Auth (env) | Notes |
 | --- | --- | --- | --- |
 | `siliconflow` *(default)* | Qwen-Image-Edit-2509 on [SiliconFlow](https://siliconflow.cn) | `SILICONFLOW_API_KEY` | ≈¥0.30/image, direct access in China |
-| `openrouter` | nano banana / gpt-image-1 via [OpenRouter](https://openrouter.ai) | `OPENROUTER_API_KEY` | one key, many models; image models are region-locked by OpenRouter on some networks |
+| `openrouter` | [OpenRouter](https://openrouter.ai) image models — `google/gemini-2.5-flash-image`, `black-forest-labs/flux.2-klein-4b` (tested), `bytedance-seed/seedream-5-0-lite`, ... | `OPENROUTER_API_KEY` | one key, many models; pass any image model with `--model`. Caveats: image models are region-locked on some networks, and seedream's img2img endpoint was returning 500s at last test |
 | `openai` | native [OpenAI Images API](https://platform.openai.com/docs/api-reference/images) — `gpt-image-1` | `OPENAI_API_KEY` | edits use `input_fidelity=high` (keeps faces); size auto-matched to the input's aspect |
 | `gemini` | [Google AI Studio](https://aistudio.google.com) — `gemini-2.5-flash-image` (nano banana) | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | direct from Google, generous free tier |
 | `vertex` | [Vertex AI](https://cloud.google.com/vertex-ai) — the same Gemini image models inside your GCP project | `VERTEX_PROJECT` + `GOOGLE_ACCESS_TOKEN`, or a logged-in `gcloud` CLI | `VERTEX_LOCATION` defaults to `global` |

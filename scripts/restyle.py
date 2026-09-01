@@ -115,7 +115,12 @@ def openrouter_payload(model, image_paths, prompt):
     for p in image_paths:
         content.append({"type": "image_url", "image_url": {"url": data_url(p)}})
     messages = [{"role": "user", "content": content if len(content) > 1 else prompt}]
-    return {"model": model, "messages": messages, "modalities": ["image", "text"]}
+    payload = {"model": model, "messages": messages}
+    if "gemini" in model.lower():
+        # gemini image models route only when both output modalities are declared;
+        # dedicated image models (seedream, flux, gpt-image) reject the param
+        payload["modalities"] = ["image", "text"]
+    return payload
 
 
 def extract_openrouter_images(payload):
