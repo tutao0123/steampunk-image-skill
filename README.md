@@ -12,18 +12,55 @@ Same cat, same yawn — re-built in brass, one real mechanism visible. Twelve wo
 
 ## Twelve restyles
 
-Vehicles, pets, food, streets, buildings, skies — every run keeps the original composition and builds in one readable mechanism. Click any folder name for input + prompt + full-size output.
+Vehicles, pets, food, streets, buildings, skies — every run keeps the original composition and builds in one readable mechanism. Click any name for input + prompt + full-size output.
 
-<table>
-  <colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup>
-  <tr><th>Before</th><th>After</th><th>Before</th><th>After</th></tr>
-  <tr><td><a href="examples/car/"><img src="examples/car/input.jpg" width="100%" alt="car before"></a><br><sub><b><a href="examples/car/">Car</a></b> · vertical-boiler engine</sub></td><td><img src="examples/car/output.jpg" width="100%" alt="car after"></td><td><a href="examples/bicycle/"><img src="examples/bicycle/input.jpg" width="100%" alt="bicycle before"></a><br><sub><b><a href="examples/bicycle/">Bicycle</a></b> · brass chain drive</sub></td><td><img src="examples/bicycle/output.jpg" width="100%" alt="bicycle after"></td></tr>
-  <tr><td><a href="examples/motorcycle/"><img src="examples/motorcycle/input.jpg" width="100%" alt="motorcycle before"></a><br><sub><b><a href="examples/motorcycle/">Motorcycle</a></b> · boiler between the tanks</sub></td><td><img src="examples/motorcycle/output.jpg" width="100%" alt="motorcycle after"></td><td><a href="examples/airplane/"><img src="examples/airplane/input.jpg" width="100%" alt="airplane before"></a><br><sub><b><a href="examples/airplane/">Biplane</a></b> · steam radial engine</sub></td><td><img src="examples/airplane/output.jpg" width="100%" alt="airplane after"></td></tr>
-  <tr><td><a href="examples/balloon/"><img src="examples/balloon/input.jpg" width="100%" alt="balloon before"></a><br><sub><b><a href="examples/balloon/">Airship</a></b> · riveted dirigible</sub></td><td><img src="examples/balloon/output.jpg" width="100%" alt="balloon after"></td><td><a href="examples/cat/"><img src="examples/cat/input.jpg" width="100%" alt="cat before"></a><br><sub><b><a href="examples/cat/">Cat</a></b> · clockwork automaton</sub></td><td><img src="examples/cat/output.jpg" width="100%" alt="cat after"></td></tr>
-  <tr><td><a href="examples/dog/"><img src="examples/dog/input.jpg" width="100%" alt="dog before"></a><br><sub><b><a href="examples/dog/">Dog</a></b> · clockwork automaton</sub></td><td><img src="examples/dog/output.jpg" width="100%" alt="dog after"></td><td><a href="examples/coffee/"><img src="examples/coffee/input.jpg" width="100%" alt="coffee before"></a><br><sub><b><a href="examples/coffee/">Latte</a></b> · boiler-wall cup</sub></td><td><img src="examples/coffee/output.jpg" width="100%" alt="coffee after"></td></tr>
-  <tr><td><a href="examples/street/"><img src="examples/street/input.jpg" width="100%" alt="street before"></a><br><sub><b><a href="examples/street/">Street busker</a></b> · calliope-guitar</sub></td><td><img src="examples/street/output.jpg" width="100%" alt="street after"></td><td><a href="examples/clocktower/"><img src="examples/clocktower/input.jpg" width="100%" alt="clocktower before"></a><br><sub><b><a href="examples/clocktower/">Clock tower</a></b> · exposed escapement</sub></td><td><img src="examples/clocktower/output.jpg" width="100%" alt="clocktower after"></td></tr>
-  <tr><td><a href="examples/skyline/"><img src="examples/skyline/input.jpg" width="100%" alt="skyline before"></a><br><sub><b><a href="examples/skyline/">Dusk skyline</a></b> · gear-crown beacon</sub></td><td><img src="examples/skyline/output.jpg" width="100%" alt="skyline after"></td><td><a href="examples/portrait/"><img src="examples/portrait/input.jpg" width="100%" alt="portrait before"></a><br><sub><b><a href="examples/portrait/">1783 portrait</a></b> · spring automaton</sub></td><td><img src="examples/portrait/output.jpg" width="100%" alt="portrait after"></td></tr>
-</table>
+**[Car](examples/car/)** · vertical-boiler engine
+
+<p><img src="examples/car/input.jpg" width="47%" alt="car before"><img src="examples/car/output.jpg" width="47%" alt="car after"></p>
+
+**[Bicycle](examples/bicycle/)** · brass chain drive
+
+<p><img src="examples/bicycle/input.jpg" width="47%" alt="bicycle before"><img src="examples/bicycle/output.jpg" width="47%" alt="bicycle after"></p>
+
+**[Motorcycle](examples/motorcycle/)** · boiler between the tanks
+
+<p><img src="examples/motorcycle/input.jpg" width="47%" alt="motorcycle before"><img src="examples/motorcycle/output.jpg" width="47%" alt="motorcycle after"></p>
+
+**[Biplane](examples/airplane/)** · steam radial engine
+
+<p><img src="examples/airplane/input.jpg" width="47%" alt="airplane before"><img src="examples/airplane/output.jpg" width="47%" alt="airplane after"></p>
+
+**[Airship](examples/balloon/)** · riveted dirigible
+
+<p><img src="examples/balloon/input.jpg" width="47%" alt="balloon before"><img src="examples/balloon/output.jpg" width="47%" alt="balloon after"></p>
+
+**[Cat](examples/cat/)** · clockwork automaton
+
+<p><img src="examples/cat/input.jpg" width="47%" alt="cat before"><img src="examples/cat/output.jpg" width="47%" alt="cat after"></p>
+
+**[Dog](examples/dog/)** · clockwork automaton
+
+<p><img src="examples/dog/input.jpg" width="47%" alt="dog before"><img src="examples/dog/output.jpg" width="47%" alt="dog after"></p>
+
+**[Latte](examples/coffee/)** · boiler-wall cup
+
+<p><img src="examples/coffee/input.jpg" width="47%" alt="coffee before"><img src="examples/coffee/output.jpg" width="47%" alt="coffee after"></p>
+
+**[Street busker](examples/street/)** · calliope-guitar
+
+<p><img src="examples/street/input.jpg" width="47%" alt="street before"><img src="examples/street/output.jpg" width="47%" alt="street after"></p>
+
+**[Clock tower](examples/clocktower/)** · exposed escapement
+
+<p><img src="examples/clocktower/input.jpg" width="47%" alt="clocktower before"><img src="examples/clocktower/output.jpg" width="47%" alt="clocktower after"></p>
+
+**[Dusk skyline](examples/skyline/)** · gear-crown beacon
+
+<p><img src="examples/skyline/input.jpg" width="47%" alt="skyline before"><img src="examples/skyline/output.jpg" width="47%" alt="skyline after"></p>
+
+**[1783 portrait](examples/portrait/)** · spring automaton
+
+<p><img src="examples/portrait/input.jpg" width="47%" alt="portrait before"><img src="examples/portrait/output.jpg" width="47%" alt="portrait after"></p>
 
 ## Avatars that survive the circle crop
 
