@@ -23,7 +23,7 @@ import sys
 import urllib.request
 
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_MODEL = "google/gemini-2.5-flash-image-preview"
+DEFAULT_MODEL = "google/gemini-2.5-flash-image"
 
 
 def data_url(path):
