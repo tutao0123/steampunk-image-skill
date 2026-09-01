@@ -2,6 +2,8 @@
 
 Always pick a machine that could exist in a 19th-century shop drawing. The topic is the *job of the machine*, not a scene around it.
 
+Poster mode picks by topic. Restyle mode picks by what the photographed subject **is** — the photo already chose the hero, so find the row whose machine matches it and build that mechanism into the pictured object.
+
 | Topic | Hero machine | Required logic |
 | --- | --- | --- |
 | Cycling / city ride | Brass safety bicycle with chain drive | Chain + chainring + sprocket meshing |
@@ -18,6 +20,8 @@ Always pick a machine that could exist in a 19th-century shop drawing. The topic
 | Group photo | Labeled automata A–F on one plate | Shared boiler or matching neck gears |
 | City / landscape photo | Harbor, street, or skyline transcribed as map + one machine | The machine still dominates; city is margin/legend |
 | Vehicle photo (bus, car, bike) | That vehicle rebuilt in brass with real drive logic | Chain, piston, or boiler matching the vehicle |
+| Animal / pet photo | Clockwork automaton animal | Mainspring + gear train visible at the flank or chest |
+| Building / interior photo | The building's one job, mechanized (clock tower → escapement; factory → line shafting) | The mechanism replaces, not decorates, the relevant part |
 
 Anti-mappings (do not do these):
 
@@ -27,21 +31,26 @@ Anti-mappings (do not do these):
 - Topic "music" → a character playing a saxophone made of pipes
 - Portrait → a photoreal person wearing goggles
 - Group photo → a cartoon steampunk party
+- Restyle → an output that ignores the photo's composition, or gears stuck onto surfaces with no moving job
 
 If nothing fits, design a **named apparatus** (`THE {WORD} ENGINE`) whose one job is the topic, and show that job as gears, piston, boiler, pipes, or gauges.
 
 ## Photos as input
 
-There are three kinds of reference. Do not mix up their jobs.
+Two different jobs — do not mix them up.
 
-| Kind | What it is | What it is allowed to change |
+**User-provided photo** (selfie, their bike, their street) → that is Restyle mode (`SKILL.md`). The photo is the base: lock composition and identity, re-materialize materials, build in one mechanism from the table above.
+
+**Stock reference photos** (CC0/public-domain plates, cityscapes, vehicles used while composing a poster) → reference only:
+
+| Kind | What it contributes | What it is allowed to change |
 | --- | --- | --- |
-| Style plate | Public-domain engineering drawings (hatched metal, callouts, cutaways) | Line language, paper, annotation density |
+| Style plate | PD engineering drawings (hatched metal, callouts, cutaways) | Line language, paper, annotation density |
 | Subject photo | CC0/PD city, landscape, bus, car, bicycle | Silhouette and parts of the *machine* or map in the margin |
-| Portrait photo | A selfie or group shot the user provided | Pose, head count, hair/clothing volumes. Never copy skin, camera look, or modern clothes as-is |
+| Portrait photo | A face or pose the user approved reusing | Pose, head count, hair/clothing volumes. Never copy skin, camera look, or modern clothes as-is |
 
 Rules:
 
 - Night skylines full of neon are bad style refs; they leak cyan. Use them only as skyline *shape*.
-- Never invent a face. If there is no portrait photo, do not generate a person-like automaton unless the user asked for a generic one.
-- Rebuild. The output is a plate of machinery that *remembers* the photo, not a filter over the photo.
+- Never invent a face. If there is no portrait reference, do not generate a person-like automaton unless the user asked for a generic one.
+- In poster mode the output is a plate of machinery that *remembers* the reference, not a filter over it. In restyle mode the output is the photo itself, re-materialized.

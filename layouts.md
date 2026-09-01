@@ -1,6 +1,6 @@
 # Layouts
 
-All layouts are 3:4 portrait plates with parchment margins. Pick one.
+Poster mode only — restyle mode follows the input image's composition instead. All layouts are 3:4 portrait plates with parchment margins. Pick one.
 
 ## hero-assembly (default)
 

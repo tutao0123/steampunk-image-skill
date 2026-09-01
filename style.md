@@ -57,3 +57,12 @@ Not: glossy 3D CGI, subsurface chrome, ray-traced steam, octane render, photorea
 - Museum print, 3:4 portrait
 - Machine occupies roughly the middle 60–70% of the height
 - Margin is parchment, not empty black
+
+## Restyle exceptions
+
+In restyle mode the input photo overrides part of this bible:
+
+- **Aspect** follows the input image, not 3:4. No parchment margin is forced.
+- **Paper / plate rules** (vellum ground, margin, plate framing) apply only when the user asked for a poster-style plate output. A plain restyle keeps the photo's scene, re-materialized.
+- **Palette, ink, type, and texture rules** always apply: five inks, no neon, letterpress/print language over CGI. Killing cyan/neon at the source matters most in restyle mode, because night photos and screens leak it.
+- Faces: identity is locked even though skin is re-materialized — see SKILL.md faces rule.
