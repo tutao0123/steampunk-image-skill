@@ -25,6 +25,12 @@ Cursor only:
 npx skills add tutao0123/steampunk-image-skill --agent cursor
 ```
 
+Codex only:
+
+```bash
+npx skills add tutao0123/steampunk-image-skill --agent codex
+```
+
 All agents on this machine:
 
 ```bash
@@ -32,6 +38,11 @@ npx skills add tutao0123/steampunk-image-skill -g --all
 ```
 
 Then drop a photo ("把这张图改成蒸汽朋克风格") or give a brief ("给茶馆音乐会出一张蒸汽朋克海报").
+
+## Where images come from
+
+- Agents with a built-in image tool: the skill attaches the original photo and prompt directly.
+- Coding agents without one (Codex 等): the skill calls `scripts/restyle.py` (stdlib-only Python) against the [OpenRouter](https://openrouter.ai) API — export `OPENROUTER_API_KEY` and it defaults to [Gemini 2.5 Flash Image (nano banana)](https://openrouter.ai/google/gemini-2.5-flash-image-preview) for img2img restyle; pass `--model` for others such as [gpt-image-1](https://openrouter.ai/openai/gpt-image-1).
 
 ## Visual lock (both modes)
 
@@ -50,6 +61,7 @@ Then drop a photo ("把这张图改成蒸汽朋克风格") or give a brief ("给
 | [machines.md](./machines.md) | Subject → real mechanism mapping; photo reference rules |
 | [layouts.md](./layouts.md) | Poster plate layouts |
 | [examples.md](./examples.md) | Worked examples, mode-tagged |
+| [scripts/restyle.py](./scripts/restyle.py) | OpenRouter img2img / text-to-image caller (Codex 等无图像工具的 agent 用) |
 
 ## License
 
