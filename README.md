@@ -10,6 +10,16 @@ Turn images into steampunk — the same picture rebuilt in brass — or design V
 
 Same cat, same yawn — re-built in brass, one real mechanism visible. Twelve worked runs (input + prompt + output each) live in [examples/](./examples/README.md); every input photo there is CC0 / public domain, so you can reuse them in your own posts.
 
+## Avatars that survive the circle crop
+
+A dedicated **Avatar mode**: face locked, square 1:1, one small mechanism at the crop edge, plain walnut background. Nine CC0/PD portraits — paintings and museum busts — forged as one set:
+
+<p align="center">
+  <img src="examples/avatar-grid.jpg" width="560" alt="nine steampunk avatars">
+</p>
+
+Rules and template: [SKILL.md → Avatar mode](#avatar-mode), [prompt.md → AVATAR](prompt.md). Individual portraits: [examples/avatar/](examples/README.md#avatar-mode--circle-crop-safe).
+
 ## Twelve restyles
 
 Vehicles, pets, food, streets, buildings, skies — every run keeps the original composition and builds in one readable mechanism. Click any name for input + prompt + full-size output.
@@ -61,16 +71,6 @@ Vehicles, pets, food, streets, buildings, skies — every run keeps the original
 **[1783 portrait](examples/portrait/)** · spring automaton
 
 <p><img src="examples/portrait/input.jpg" width="47%" alt="portrait before"><img src="examples/portrait/output.jpg" width="47%" alt="portrait after"></p>
-
-## Avatars that survive the circle crop
-
-A dedicated **Avatar mode**: face locked, square 1:1, one small mechanism at the crop edge, plain walnut background. Nine CC0/PD portraits — paintings and museum busts — forged as one set:
-
-<p align="center">
-  <img src="examples/avatar-grid.jpg" width="560" alt="nine steampunk avatars">
-</p>
-
-Rules and template: [SKILL.md → Avatar mode](#avatar-mode), [prompt.md → AVATAR](prompt.md). Individual portraits: [examples/avatar/](examples/README.md#avatar-mode--circle-crop-safe).
 
 ## Two modes
 
@@ -158,3 +158,4 @@ All providers speak the same prompt contract (Locked / Transformed / one mechani
 ## License
 
 MIT. The example input photos in `examples/` are CC0 or public domain (credits in [examples/README.md](./examples/README.md)); example outputs are generated images shown for demonstration.
+
