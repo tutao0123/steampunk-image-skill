@@ -1,0 +1,17 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one market square with a stone clock tower in the center, tented market stalls at its base, trees and street lamps around, buildings lining the square), every object stays in its exact position, none added or removed. Aspect ratio 1:1 square, tower centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The building's one job — telling time — becomes visible machinery: the clock face becomes an exposed turret-clock movement, its dial backed by a large readable gear train and escapement mounted in an open brass framework; the clock hands keep their positions.
+- The tower becomes riveted brass and oxidized copper masonry with etched window hatching; the spire keeps its shape in patinated copper.
+- Market stalls become parchment canvas awnings on brass rib poles; the crowd becomes soft parchment-beige silhouette figures in the same positions; trees become fine etched verdigris foliage; street lamps become brass pressure lamps with warm glass.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, one gentle wisp of steam from the tower's movement housing.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: adding or removing people, stalls or buildings, changing anyone's position, neon or cyan accents, chrome 3D render look.
+
+On-image text: none. Remove every letter, sign, and banner — blank canvas and blank etched panels everywhere.
+
+Re-render rules: Fully render every part of the image in the five-ink palette — no blank white paper areas, no unfinished line art, no sketch-only regions. The output is a re-materialized photograph, not a poster: no borders, no title strips, no text anywhere.

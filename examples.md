@@ -76,9 +76,19 @@ No neural-net diagram, no robot.
 
 ## Real runs (in this repo)
 
-Four CC0/public-domain inputs restyled end-to-end with `scripts/restyle.py` — input, exact prompt, and output in [`examples/`](./examples/README.md):
+Twelve CC0/public-domain inputs restyled end-to-end with `scripts/restyle.py` — input, exact prompt, and output in [`examples/`](./examples/README.md):
 
+- Car → brass boiler car (`examples/car/`, two providers)
 - Pet photo → clockwork automaton cat (`examples/cat/`)
 - 1783 Ducreux portrait → spring-powered automaton (`examples/portrait/`)
 - Street musician → steam calliope-guitar (`examples/street/`)
 - Latte pour → vertical-boiler cup (`examples/coffee/`)
+- WWI biplane → steam-engine biplane (`examples/airplane/`)
+- Clock tower → exposed turret-clock escapement (`examples/clocktower/`)
+- Road bicycle → real brass chain drive (`examples/bicycle/`)
+- Boxer dog → clockwork automaton (`examples/dog/`)
+- Vintage motorcycle → vertical-boiler moto (`examples/motorcycle/`)
+- Hot-air balloon → riveted airship (`examples/balloon/`)
+- Dusk skyline → five-ink brass city (`examples/skyline/`)
+
+Avatar mode (square, circle-crop-safe): nine CC0/PD portraits → brass automaton busts in [`examples/avatar/`](./examples/README.md), grid at [`examples/avatar-grid.jpg`](./avatar-grid.jpg).

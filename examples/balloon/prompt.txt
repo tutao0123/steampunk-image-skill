@@ -1,0 +1,16 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one hot-air balloon in flight, envelope up, basket below, burner flame at the mouth, seen from below against the open sky), the clouds around it. Aspect ratio 1:1 square, balloon centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The balloon becomes a Victorian airship in the exact same silhouette and tilt: the envelope becomes patchwork panels of aged parchment canvas and thin brass sheet, seamed with riveted strips, keeping the original panel color layout but forced into the five-ink palette; a brass pressure relief valve sits at the crown.
+- One mechanism, built into the subject and mechanically readable: the burner becomes a small vertical boiler with a visible flame valve and a pressure gauge on the mouth ring; twin brass propellers on folding arms at the basket sides are driven by belts from the boiler.
+- The basket becomes riveted brass and wicker; the ropes become brass chain links in the same angles.
+- Sky: warm parchment haze with soft soot-tinted clouds in palette colors.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, gentle steam wisp from the crown valve.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the balloon's silhouette or tilt, adding or removing balloons, neon or cyan accents, chrome 3D render look.
+
+On-image text: none. The envelope panels are blank — no letters, flags, or logos.

@@ -1,0 +1,16 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one WWI biplane with two stacked wings, wooden propeller at the nose, tail with fin, landing gear with two wheels, parked in a museum hangar), its position and heading. The other aircraft and the hangar around it stay in their positions as background. Aspect ratio 1:1 square, biplane centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The biplane is rebuilt in the same silhouette: fuselage becomes riveted brass panels with a walnut cockpit rim; both wings become fabric-and-brass surfaces with etched rib lines and brass edge strips; the tail fin becomes patinated copper; struts become polished brass tubes.
+- One mechanism, built into the subject and mechanically readable: the nose becomes an exposed steam engine driving the existing propeller — cylinder bank, connecting rods, small vertical boiler behind the engine with a pressure gauge on the cowl; a thin copper steam line runs along the fuselage; one faint wisp of steam from the exhaust stack.
+- The roundel on the fuselage becomes a blank brass medallion with an engraved gear emblem, no letters.
+- Background: the hangar and other exhibits become dim parchment-toned silhouettes in the same positions; floor becomes dark walnut.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, warm workshop light.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the biplane's silhouette, wing count or position, adding or removing aircraft, neon or cyan accents, chrome 3D render look.
+
+On-image text: none. No letters, banners, or museum labels anywhere.

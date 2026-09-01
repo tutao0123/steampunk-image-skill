@@ -1,0 +1,18 @@
+Restyle the attached portrait as a steampunk avatar. Same person, same face, rebuilt in brass — not a new character.
+
+Locked (preserve exactly): head-and-shoulders framing and square 1:1 crop, face structure and identity, expression, head angle, hairstyle silhouette, eye direction. The face is the hero — clean, centered, unobstructed.
+
+Transformed (re-materialize everything visible):
+- Skin becomes polished and patinated brass plates with fine seams following the original face planes; brow, nose and cheeks keep their exact original shape.
+- Eyes become warm amber glass lenses keeping the original gaze; brows become fine engraved lines.
+- The carved hair keeps its exact locks, re-cut in brushed brass; the chest cut of the bust becomes a machined brass mount.
+- Clothing at the shoulders becomes a riveted leather collar with a machined brass neck ring.
+- One small mechanism, placed at the edge of the frame where an avatar circle-crop still shows it: a gear ring where the neck meets the brass mount, teeth clearly meshing.
+- Background becomes plain deep walnut brown with a faint parchment glow behind the head, no objects.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: fine rivets, patina, soot in recesses. Must read clearly at 200 px avatar size: strong silhouette, nothing busy behind the head.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the face or expression, adding hats, goggles or objects not present, full body, busy background, neon or cyan, text.
+
+On-image text: none.

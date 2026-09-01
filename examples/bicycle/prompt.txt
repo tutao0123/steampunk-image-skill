@@ -1,0 +1,19 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one classic diamond-frame road bicycle in side view, leaning as in the photo, both wheels on the ground), the wall and plants behind it. Aspect ratio 1:1 square, bicycle centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The steel frame becomes riveted brass tubing with walnut-wood grip zones and a stitched leather saddle, same geometry and same lean angle.
+- One mechanism, built into the subject and mechanically readable: a real brass chain drive — front chainring, chain with visible links, rear sprocket, all meshing and aligned, plus a small brass dynamo gear rubbing the rear tire.
+- Wheels keep their exact size and positions: rims become etched brass, spokes become fine brass wire, tires become iron-shod rubber with tread.
+- Handlebars, bell and kickstand re-materialized in brass and leather; the small rear rack becomes a riveted copper luggage rack.
+- Background: wall becomes aged vellum-toned stone, plants become etched verdigris foliage.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, warm workshop light.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the frame geometry or lean angle, adding a motor or any new object, neon or cyan accents, chrome 3D render look, text.
+
+On-image text: none.
+
+Re-render rules: The output is a re-materialized photograph of the same scene, not a poster plate — keep the wall and plants behind the bicycle as rendered scenery, no parchment poster background, no borders, no corner ornaments, no text of any kind.

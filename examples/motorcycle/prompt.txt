@@ -1,0 +1,16 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one vintage dark-red motorcycle in three-quarter front view, front wheel turned slightly, standing on grass), the people and tents in the soft background. Aspect ratio 1:1 square, motorcycle centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The motorcycle is rebuilt in its same silhouette: the dark red paint becomes iron-rust-red leather-and-brass bodywork with riveted tank straps; the frame becomes polished brass tubing; the sprung saddle becomes stitched leather on leaf springs.
+- One mechanism, built into the subject and mechanically readable: the engine becomes a small vertical boiler between the tanks with a pressure gauge on the handlebar stem, copper exhaust pipes routing to a piston drive on the rear wheel; a thin wisp of steam rises from the chimney stub.
+- Wheels keep size and position: rims etched brass, spokes brass wire, tires iron-shod; the big headlamp becomes a brass-and-glass pressure lamp.
+- Background people become parchment-beige silhouette figures; tents become parchment canvas on brass poles; grass becomes etched verdigris blades.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the motorcycle's pose or silhouette, adding a rider, neon or cyan accents, chrome 3D render look.
+
+On-image text: none. Remove every letter and logo — blank riveted panels and blank canvas everywhere.

@@ -1,0 +1,17 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one city skyline at dusk, every tower in its exact position and height, the foreground rooftops at the bottom), the layout of lit and unlit windows. Aspect ratio 1:1 square, skyline filling the frame as in the photo.
+
+Transformed (re-materialize everything visible):
+- Every tower becomes riveted copper, brass and iron masonry keeping its exact silhouette: window grids become etched patterns, setbacks become stepped brass cornices, antennae become slender brass masts.
+- The tallest tower's crown becomes one readable mechanism: a giant exposed gear train and escapement driving a rotating beacon lamp — the machine dominates its tower just as the crown did.
+- Dusk light is re-inked: the sky becomes a warm parchment-to-walnut gradient with soot haze; every window glow becomes warm lamplight in amber and rust — the original blue and teal light is completely replaced.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, thin chimney smoke rising from two mid-ground rooftops.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing any tower's position, height or count, adding aircraft or airships, neon or cyan accents, chrome 3D render look, text.
+
+On-image text: none.
+
+Re-render rules: Warm amber lamplight in every window and a warm parchment-haze sky — absolutely no blue, purple or teal pixels anywhere. The output is a re-materialized photograph, not a poster: no borders, no text.

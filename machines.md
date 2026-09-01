@@ -18,6 +18,7 @@ Poster mode picks by topic. Restyle mode picks by what the photographed subject 
 | Writing / press / news | Letterpress platen + ink disk | Piston-like platen + gears |
 | Selfie / portrait | One brass automaton bust or three-quarter figure | Neck gear, jaw hinge, or ocular turret |
 | Group photo | Labeled automata A–F on one plate | Shared boiler or matching neck gears |
+| Avatar (头像 / profile picture) | Automaton bust, square 1:1 | Mechanism at the crop edge only: neck ring, jaw hinge, temple gear, ear gauge — face stays the hero |
 | City / landscape photo | Harbor, street, or skyline transcribed as map + one machine | The machine still dominates; city is margin/legend |
 | Vehicle photo (bus, car, bike) | That vehicle rebuilt in brass with real drive logic | Chain, piston, or boiler matching the vehicle |
 | Animal / pet photo | Clockwork automaton animal | Mainspring + gear train visible at the flank or chest |

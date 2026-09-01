@@ -7,15 +7,38 @@ Turn images into steampunk — the same picture rebuilt in brass — or design V
 | Before | After |
 | --- | --- |
 | ![cat before](examples/cat/input.jpg) | ![cat after](examples/cat/output.jpg) |
-| ![portrait before](examples/portrait/input.jpg) | ![portrait after](examples/portrait/output.jpg) |
 
-Same cat, same yawn — re-built in brass, one real mechanism visible. Five worked runs (input + prompt + output each) live in [examples/](./examples/README.md); every input photo there is CC0 / public domain, so you can reuse them in your own posts.
+Same cat, same yawn — re-built in brass, one real mechanism visible. Twelve worked runs (input + prompt + output each) live in [examples/](./examples/README.md); every input photo there is CC0 / public domain, so you can reuse them in your own posts.
+
+## Twelve restyles
+
+Vehicles, pets, food, streets, buildings, skies — every run keeps the original composition and builds in one readable mechanism. Click any folder name for input + prompt + full-size output.
+
+| Before | After | Before | After |
+| --- | --- | --- | --- |
+| **Car** ([↗](examples/car/)) ![car](examples/car/input.png) | ![car out](examples/car/output-qwen.jpg) | **Bicycle** ([↗](examples/bicycle/)) ![bike](examples/bicycle/input.jpg) | ![bike out](examples/bicycle/output.jpg) |
+| **Motorcycle** ([↗](examples/motorcycle/)) ![moto](examples/motorcycle/input.jpg) | ![moto out](examples/motorcycle/output.jpg) | **Biplane** ([↗](examples/airplane/)) ![plane](examples/airplane/input.jpg) | ![plane out](examples/airplane/output.jpg) |
+| **Airship** ([↗](examples/balloon/)) ![balloon](examples/balloon/input.jpg) | ![balloon out](examples/balloon/output.jpg) | **Cat** ([↗](examples/cat/)) ![cat2](examples/cat/input.jpg) | ![cat2 out](examples/cat/output.jpg) |
+| **Dog** ([↗](examples/dog/)) ![dog](examples/dog/input.jpg) | ![dog out](examples/dog/output.jpg) | **Latte** ([↗](examples/coffee/)) ![coffee](examples/coffee/input.jpg) | ![coffee out](examples/coffee/output.jpg) |
+| **Street busker** ([↗](examples/street/)) ![street](examples/street/input.jpg) | ![street out](examples/street/output.jpg) | **Clock tower** ([↗](examples/clocktower/)) ![tower](examples/clocktower/input.jpg) | ![tower out](examples/clocktower/output.jpg) |
+| **Dusk skyline** ([↗](examples/skyline/)) ![sky](examples/skyline/input.jpg) | ![sky out](examples/skyline/output.jpg) | **1783 portrait** ([↗](examples/portrait/)) ![port](examples/portrait/input.jpg) | ![port out](examples/portrait/output.jpg) |
+
+## Avatars that survive the circle crop
+
+A dedicated **Avatar mode**: face locked, square 1:1, one small mechanism at the crop edge, plain walnut background. Nine CC0/PD portraits — paintings and museum busts — forged as one set:
+
+<p align="center">
+  <img src="examples/avatar-grid.jpg" width="560" alt="nine steampunk avatars">
+</p>
+
+Rules and template: [SKILL.md → Avatar mode](#avatar-mode), [prompt.md → AVATAR](prompt.md). Individual portraits: [examples/avatar/](examples/README.md#avatar-mode--circle-crop-safe).
 
 ## Two modes
 
 | You give | You get |
 | --- | --- |
 | A photo + "把它变成蒸汽朋克" | **Restyle**: same composition, same subject — materials re-built as brass/copper/iron/leather, palette forced to five inks, one real mechanism built into the subject |
+| A portrait + "给我做个头像" | **Avatar**: square brass-plate bust that survives a circular crop — face locked, one mechanism at the edge |
 | A text brief ("城市骑行活动海报") | **Poster**: a Victorian engineering-plate design with a locked mechanical thesis, layout, and stamped typography |
 
 The restyle mode is image-first: the original photo is passed to the image tool together with the prompt, a **fidelity contract** locks composition and identity, and drift (new composition, replaced subject, neon surviving) is rejected at the quality gate.

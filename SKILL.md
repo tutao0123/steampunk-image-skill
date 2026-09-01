@@ -1,14 +1,15 @@
 ---
 name: steampunk-image-skill
-description: Turn images into steampunk / Victorian industrial style, or design a steampunk poster from a text brief. Use whenever the user shares a photo or image and wants it restyled as steampunk, brass machinery, clockwork, automata, or Victorian industrial art (蒸汽朋克、机械风、复古机械、把图片变成机械/蒸汽朋克风格), or asks for a steampunk poster, flyer, or cover from a description. Also use to iterate on a failed steampunk generation.
+description: Turn images into steampunk / Victorian industrial style, design a steampunk poster from a text brief, or forge steampunk avatars and profile pictures. Use whenever the user shares a photo or image and wants it restyled as steampunk, brass machinery, clockwork, automata, or Victorian industrial art (蒸汽朋克、机械风、复古机械、把图片变成机械/蒸汽朋克风格), asks for a steampunk poster, flyer, or cover from a description, or wants a steampunk avatar / 头像 / profile picture made from a face photo. Also use to iterate on a failed steampunk generation.
 ---
 
 # Steampunk Image
 
-Two modes. Pick by input, not by mood:
+Three modes. Pick by input, not by mood:
 
 - **Restyle** — an image was attached (or a specific real thing was named: "my bike", "这张照片"). Keep the picture, change its materials. The output must read as *the same picture rebuilt in brass*: same composition, same subject, same angle.
 - **Poster** — no image, or the word 海报 / poster / cover was used for a *new* design. Produce a Victorian engineering-plate poster from the brief.
+- **Avatar** — a face/portrait was attached and 头像 / avatar / profile picture was asked (or a set of avatars, 九宫格). Square brass-plate bust that survives a circular crop.
 
 Companion files (read what the mode needs, not all of it):
 
@@ -29,6 +30,7 @@ If running as a single file with no companions, follow this runbook and keep the
 | A real thing named but not attached ("我的自行车", "我们公司楼") | Restyle posture: reconstruct the subject faithfully, then restyle; say that you approximated it |
 | Text brief only, new artwork wanted | **Poster** |
 | Selfie/group + "变成机器人/automaton" | Restyle with full rebuild (faces rule below) |
+| Face/portrait attached + 头像 / avatar / profile picture (批量头像、九宫格 included) | **Avatar** |
 
 Ambiguous ("帮我搞个蒸汽朋克"), no image → Poster. When both could apply, ask one short question or default to Restyle if any image is in context.
 
@@ -67,6 +69,17 @@ Pick **one** readable mechanism that belongs to the photo's main subject — `ma
 
 Fill the RESTYLE template in `prompt.md` — keep the Locked/Transformed lines in the prompt. Filename: `steampunk-{slug}.png`. One image, no unsolicited variations.
 
+## Avatar mode: face in → profile picture out
+
+A Restyle sub-mode with one extra constraint: **the output will be worn as a small circle.** Everything serves legibility at 200 px.
+
+1. **Crop to head-and-shoulders square (1:1) before generating** — if the input is a full-body or wide shot, crop it yourself so the face fills the frame; the crop, not the model, controls framing.
+2. **Fidelity contract, face hero** — Locked: face structure, identity, expression, head angle, hairstyle silhouette. The face stays clean, centered, unobstructed; no goggles/hats that were not there.
+3. **One small mechanism at the crop edge** — neck gear ring, jaw hinge, temple gear, ear-piece gauge, winding key at the collar. It must still read inside a circle that trims the corners; never put the only mechanism mid-corner.
+4. **Re-materialize, don't costume** — skin → brass plates with seams on the original face planes; eyes → amber glass lenses keeping the gaze; collar → riveted leather + neck ring. Engraved-plate realism, not cartoon, not cute.
+5. **Plain walnut background** with a faint parchment glow behind the head — nothing busy survives a small circle.
+6. Five inks, no text, no borders. Fill the AVATAR template in `prompt.md`. For a set (九宫格), vary only the mechanism per person, keep one palette and one background — the grid should read as one collection.
+
 ## Poster mode: brief in → plate out
 
 Lock four decisions in a 4-line brief before generating. Do not skip the thesis.
@@ -90,6 +103,7 @@ Generate with the POSTER template in `prompt.md`. Aspect 3:4, filename `steampun
 Reject and regenerate **once** (same thesis/layout, tighter prompt) if any check fails:
 
 - **Restyle**: composition drifted · subject unrecognizable or replaced · neon/cyan/magenta survived · mechanism reads as stickers · face became a stranger
+- **Avatar**: face became a stranger · output not square · mechanism only readable outside a circle crop · busy background · cartoon/cute look · text or border present
 - **Poster**: no readable mechanism (gears don't mesh, pipes go nowhere) · palette broke · cute/anime/goggles-as-subject · glossy CGI look · event text missing · machine is an ornament, not the hero
 
 If the second attempt fails the same check, show it anyway, name the miss, and ask one question (change mechanism, layout, or reference handling — one only).

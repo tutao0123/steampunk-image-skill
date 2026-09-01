@@ -1,0 +1,18 @@
+Restyle the attached image as a steampunk / Victorian industrial re-materialization. This is the same picture rebuilt in brass, not a new picture.
+
+Locked (preserve exactly): composition, camera angle, framing, subject identity (one fawn boxer dog, head and chest, head turned three-quarters toward the camera, ears folded, tongue out in the same way, wearing a chain collar), the blurred cool background. Aspect ratio 1:1 square, dog centered as in the photo.
+
+Transformed (re-materialize everything visible):
+- The dog becomes a clockwork automaton boxer in the exact same pose: coat becomes layered etched brass and stitched leather plates following the original fawn-and-white markings; the tongue becomes a soft copper ribbon keeping its curl; the chain collar becomes a real brass chain with a small gear-ring tag.
+- One mechanism, built into the subject and mechanically readable: a round hinged panel on the chest is open like a pocket-watch case, showing a wound mainspring barrel and gear train; a small winding key sits at the back of the neck.
+- Eyes become warm amber glass lamp lenses keeping the original expression.
+- Background: blurred park becomes deep walnut brown with soft warm lamp bokeh in palette colors.
+- Palette, five inks only: warm parchment beige #E4D2B0, antique brass #B08D4A, oxidized copper #6D7F57, iron rust red #8E3A2F, deep walnut brown #3B2418. No neon, no cyan, no magenta, no clean digital gradient.
+- Surface: rivets, patina, soot in recesses, one faint wisp of steam from the chest panel seam.
+- Print language: Victorian engineering-plate illustration, letterpress grain, slight ink misregistration. Not glossy 3D CGI, not cyberpunk, not a photo filter.
+
+Forbidden: changing the pose, head angle or expression, adding or removing the dog or any object, cute cartoon goggles as the only change, neon or cyan accents, chrome 3D render look, text.
+
+On-image text: none.
+
+Re-render rules: The output is a re-materialized photograph, not a poster — no text bands, no banners, no fake paragraphs, no borders. The background is a plain blurred park in palette colors only: absolutely no colorful bokeh circles, no blue, no red dots.
