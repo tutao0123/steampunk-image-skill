@@ -42,7 +42,7 @@ Then drop a photo ("把这张图改成蒸汽朋克风格") or give a brief ("给
 ## Where images come from
 
 - Agents with a built-in image tool: the skill attaches the original photo and prompt directly.
-- Coding agents without one (Codex 等): the skill calls `scripts/restyle.py` (stdlib-only Python) against the [OpenRouter](https://openrouter.ai) API — export `OPENROUTER_API_KEY` and it defaults to [Gemini 2.5 Flash Image (nano banana)](https://openrouter.ai/google/gemini-2.5-flash-image-preview) for img2img restyle; pass `--model` for others such as [gpt-image-1](https://openrouter.ai/openai/gpt-image-1).
+- Coding agents without one (Codex 等): the skill calls `scripts/restyle.py` (stdlib-only Python). Default provider is [SiliconFlow](https://siliconflow.cn) — `Qwen/Qwen-Image-Edit-2509`, ≈¥0.30/image, direct access in China, key in `SILICONFLOW_API_KEY`. `--provider openrouter` switches to [nano banana](https://openrouter.ai/google/gemini-2.5-flash-image-preview) / [gpt-image-1](https://openrouter.ai/openai/gpt-image-1) (key in `OPENROUTER_API_KEY`; image models are region-locked by OpenRouter for some networks).
 
 ## Visual lock (both modes)
 

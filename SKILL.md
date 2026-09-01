@@ -17,7 +17,7 @@ Companion files (read what the mode needs, not all of it):
 - `machines.md` — subject → real mechanism mapping. Read when choosing the mechanism.
 - `layouts.md` — poster plate layouts. Poster mode only.
 - `examples.md` — mode-tagged worked examples. Read one before your first run in each mode.
-- `scripts/restyle.py` — OpenRouter image API caller for agents without a built-in image tool (e.g. Codex). No third-party dependencies.
+- `scripts/restyle.py` — image API caller for agents without a built-in image tool (e.g. Codex). SiliconFlow (default, direct in China) and OpenRouter. No third-party dependencies.
 
 If running as a single file with no companions, follow this runbook and keep the five-ink palette and the forbidden lists.
 
@@ -57,10 +57,10 @@ Pick **one** readable mechanism that belongs to the photo's main subject — `ma
 - Built-in image edit tool available → attach the original image with the prompt; if strength/denoise exists, use ≈ 0.5–0.65: high enough to re-materialize materials, low enough to keep composition.
 - No image tool (plain coding agent, e.g. Codex) → call the API yourself:
   ```bash
-  OPENROUTER_API_KEY=... python scripts/restyle.py \
+  SILICONFLOW_API_KEY=... python scripts/restyle.py \
     --image input.jpg --prompt-file restyle-prompt.txt --out steampunk-{slug}.png
   ```
-  Default model is `google/gemini-2.5-flash-image-preview` (nano banana); pass `--model` to switch. Text-only tools without API access → say so, then approximate: describe the photo's composition in the prompt ("same composition as: …") and warn the result approximates the photo.
+  Default provider is SiliconFlow (`Qwen/Qwen-Image-Edit-2509`, ≈¥0.30/image, direct access in China). `--provider openrouter` switches to nano banana — note OpenRouter region-locks image models for some networks. Text-only tools without API access → say so, then approximate: describe the photo's composition in the prompt ("same composition as: …") and warn the result approximates the photo.
 - Aspect: output follows the input. Only poster mode forces 3:4.
 
 ### 5. Generate

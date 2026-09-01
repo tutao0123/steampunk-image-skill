@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
-"""Generate or restyle an image via the OpenRouter chat completions API.
+"""Generate or restyle an image, via OpenRouter or SiliconFlow.
 
-Works with image-output models such as google/gemini-2.5-flash-image-preview
-(nano banana). Pass --image to restyle an existing picture (Restyle mode);
-omit it for text-to-image (Poster mode). The API key comes from the
-OPENROUTER_API_KEY environment variable.
+Providers:
+  openrouter   chat completions, image-output models such as
+               google/gemini-2.5-flash-image (nano banana). Key: OPENROUTER_API_KEY.
+               Note: image models are region-locked by OpenRouter; text models are not.
+  siliconflow  images/generations, instruction-based edit models such as
+               Qwen/Qwen-Image-Edit-2509 (recommended in China: direct access,
+               ~CNY 0.30/image). Key: SILICONFLOW_API_KEY.
+
+Pass --image to restyle an existing picture (Restyle mode); omit it for
+text-to-image (Poster mode).
 
 Examples:
-  python restyle.py --image photo.jpg --prompt-file prompt.txt --out steampunk-bike.png
-  python restyle.py --prompt-file poster.txt --out steampunk-poster.png
-  python restyle.py --image photo.jpg --prompt "..." --out out.png --model openai/gpt-image-1
-(gpt-image-1 may require OpenRouter's dedicated Image API instead of chat
-completions; if the request fails, fall back to the default Gemini model.)
+  python restyle.py --provider siliconflow --image photo.jpg --prompt-file prompt.txt --out out.png
+  python restyle.py --image photo.jpg --prompt "..." --out out.png
+  python restyle.py --prompt-file poster.txt --out poster.png
 """
 
 import argparse
@@ -22,8 +26,15 @@ import os
 import sys
 import urllib.request
 
-API_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_MODEL = "google/gemini-2.5-flash-image"
+ENDPOINTS = {
+    "openrouter": "https://openrouter.ai/api/v1/chat/completions",
+    "siliconflow": "https://api.siliconflow.cn/v1/images/generations",
+}
+KEY_VARS = {"openrouter": "OPENROUTER_API_KEY", "siliconflow": "SILICONFLOW_API_KEY"}
+DEFAULT_MODELS = {
+    "openrouter": "google/gemini-2.5-flash-image",
+    "siliconflow": "Qwen/Qwen-Image-Edit-2509",
+}
 
 
 def data_url(path):
@@ -32,19 +43,17 @@ def data_url(path):
         return f"data:{mime};base64,{base64.b64encode(f.read()).decode()}"
 
 
-def build_messages(image_paths, prompt):
+def openrouter_payload(model, image_paths, prompt):
     content = [{"type": "text", "text": prompt}]
     for p in image_paths:
         content.append({"type": "image_url", "image_url": {"url": data_url(p)}})
-    return [{"role": "user", "content": content if len(content) > 1 else prompt}]
+    messages = [{"role": "user", "content": content if len(content) > 1 else prompt}]
+    return {"model": model, "messages": messages}
 
 
-def extract_images(payload):
-    """Pull every generated image out of a chat completion response.
-
-    OpenRouter returns them under choices[].message.images[]; the exact
-    nesting has varied, so accept both {"image_url": {...}} and raw strings.
-    """
+def extract_openrouter_images(payload):
+    """Pull generated images out of a chat completion response; nesting has
+    varied across OpenRouter versions, so accept every shape seen so far."""
     found = []
     for choice in payload.get("choices", []):
         message = choice.get("message", {})
@@ -69,21 +78,37 @@ def extract_images(payload):
     return found
 
 
-def save_data_url(url, out_path):
-    header, _, b64 = url.partition(",")
-    if not b64:
-        raise SystemExit(f"unexpected image payload (no base64 data): {header[:60]}")
+def siliconflow_payload(model, image_paths, prompt):
+    payload = {"model": model, "prompt": prompt, "image_size": "1024x1024"}
+    if image_paths:
+        payload["image"] = data_url(image_paths[0])
+    return payload
+
+
+def save_image_url(url, out_path):
+    if url.startswith("data:"):
+        _, _, b64 = url.partition(",")
+        if not b64:
+            raise SystemExit(f"unexpected image payload: {url[:60]}")
+        data = base64.b64decode(b64)
+    elif url.startswith("http"):
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=120) as r:
+            data = r.read()
+    else:
+        raise SystemExit(f"unsupported image url: {url[:60]}")
     with open(out_path, "wb") as f:
-        f.write(base64.b64decode(b64))
+        f.write(data)
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--provider", choices=sorted(ENDPOINTS), default="siliconflow")
     ap.add_argument("--image", action="append", default=[], help="source image; repeat for multiple refs")
     ap.add_argument("--prompt", help="prompt text (or use --prompt-file)")
     ap.add_argument("--prompt-file", help="read the prompt from a UTF-8 text file")
     ap.add_argument("--out", required=True, help="output png path")
-    ap.add_argument("--model", default=DEFAULT_MODEL)
+    ap.add_argument("--model", help="default: provider-specific (%s)" % DEFAULT_MODELS)
     args = ap.parse_args()
 
     prompt = args.prompt or (
@@ -91,39 +116,40 @@ def main():
     )
     if not prompt:
         ap.error("provide --prompt or --prompt-file")
-    api_key = os.environ.get("OPENROUTER_API_KEY")
+    model = args.model or DEFAULT_MODELS[args.provider]
+    api_key = os.environ.get(KEY_VARS[args.provider])
     if not api_key:
-        sys.exit("set the OPENROUTER_API_KEY environment variable first")
+        sys.exit(f"set the {KEY_VARS[args.provider]} environment variable first")
 
-    body = json.dumps(
-        {"model": args.model, "messages": build_messages(args.image, prompt)}
-    ).encode()
+    if args.provider == "openrouter":
+        body = openrouter_payload(model, args.image, prompt)
+    else:
+        body = siliconflow_payload(model, args.image, prompt)
+
     req = urllib.request.Request(
-        API_URL,
-        data=body,
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
+        ENDPOINTS[args.provider],
+        data=json.dumps(body).encode(),
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
         method="POST",
     )
     try:
         with urllib.request.urlopen(req, timeout=300) as resp:
             payload = json.load(resp)
     except urllib.error.HTTPError as e:
-        detail = e.read().decode(errors="replace")[:500]
-        sys.exit(f"API error {e.code}: {detail}")
+        sys.exit(f"API error {e.code}: {e.read().decode(errors='replace')[:500]}")
 
-    images = extract_images(payload)
+    if args.provider == "openrouter":
+        images = extract_openrouter_images(payload)
+    else:
+        images = [i.get("url") for i in payload.get("images", []) if i.get("url")]
+        if not images and payload.get("data"):  # openai-style shape, just in case
+            images = [i.get("url") for i in payload["data"] if i.get("url")]
     if not images:
-        text = ""
-        try:
-            text = payload["choices"][0]["message"]["content"]
-        except Exception:
-            pass
-        sys.exit(f"no image in response. model text: {str(text)[:400]}")
-    save_data_url(images[0], args.out)
-    print(f"saved {args.out} ({len(images)} image(s) returned)")
+        detail = json.dumps(payload, ensure_ascii=False)[:400]
+        sys.exit(f"no image in response. payload: {detail}")
+
+    save_image_url(images[0], args.out)
+    print(f"saved {args.out} via {args.provider}/{model} ({len(images)} image(s) returned)")
 
 
 if __name__ == "__main__":
